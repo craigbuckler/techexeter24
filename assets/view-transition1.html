@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>view transition</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/core-color.css">
+<style>
+body {
+  margin: 1em;
+}
+
+main {
+  max-width: 30em;
+  margin-inline: auto;
+}
+
+img {
+  width: 80%;
+  height: auto;
+  margin-block: 1.5em;
+  margin-inline: auto;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: 1.2s pagetransition-out 0s ease;
+}
+
+::view-transition-new(root) {
+  animation: 1.2s pagetransition-in 0s ease;
+}
+
+@keyframes pagetransition-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+}
+
+@keyframes pagetransition-in {
+  from {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+</style>
+</head>
+<body>
+
+  <main>
+
+    <h1>Multi-page view transitions</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam molestie nec augue nec sollicitudin. <a href="./view-transition2.html">Next page&hellip;</a></p>
+
+    <img src="images/squirrel.jpg" width="900" height="600" alt="squirrel" />
+
+  </main>
+
+</body>
+</html>

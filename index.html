@@ -1,0 +1,2454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Future Web | TechExeter 2024</title>
+<meta name="description" content="Presentation about new and up-coming new web platform features.">
+<meta name="author" content="Craig Buckler">
+<link rel="stylesheet" href="dist/reset.css">
+<link rel="stylesheet" href="dist/reveal.css">
+<link rel="stylesheet" href="dist/theme/black.css">
+<link rel="stylesheet" href="plugin/highlight/monokai.css">
+<link rel="stylesheet" href="assets/css/presentation.css">
+</head>
+<body class="reveal">
+	<main class="slides">
+
+		<section class="welcome" data-background-image="assets/images/ai-web1.jpg">
+			<h1 class="r-fit-text">Future Web</h1>
+
+			<h1 style="margin-bottom:0;">Craig Buckler</h1>
+			<p style="font-size:1.4em;margin:0 0 2em 0;">craigbuckler.com</p>
+
+			<h1>TechExeter Conference<br />1 November 2024</h1>
+
+			<p class="printswitch"><a href="?print-pdf"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M18 7H6V3h12zm0 5.5q.42 0 .71-.29t.29-.71-.29-.71-.71-.29-.71.29-.29.71.29.71.71.29M16 19v-4H8v4zm2 2H6v-4H2v-6q0-1.27.88-2.14T5 8h14q1.27 0 2.14.86T22 11v6h-4z"/></svg> print-friendly view</a></p>
+
+			<aside class="notes" data-markdown>
+				hi everyone. thanks for coming along
+
+				we're going to be talking about some exciting new browser features
+			</aside>
+		</section>
+
+		<section data-background-image="assets/images/ai-web1.jpg">
+			<aside class="notes" data-markdown>
+				sorry I'm not going to be discussing AI
+
+				you've probably seen enough of that in other talks
+
+				but this is what AI thinks the web will look like in 50 years
+
+				we'll still be using laptops
+
+				but images will be floating around our our heads
+
+				and it'll have made our eyes and fingers go a bit weird
+			</aside>
+		</section>
+
+		<section data-background-image="assets/images/ai-web2.jpg">
+			<aside class="notes" data-markdown>
+				but AI also thinks we'll be able to use devices with our eyes shut
+
+				so I'm not sure why we'll need the floating images
+
+				but the web will be so good
+			</aside>
+		</section>
+
+		<section data-background-image="assets/images/ai-web3.jpg">
+			<aside class="notes" data-markdown>
+				we'll need an extra W
+			</aside>
+		</section>
+
+		<section data-background-image="assets/images/ai-web4.jpg">
+			<aside class="notes" data-markdown>
+				or maybe a new alphabet
+			</aside>
+		</section>
+
+		<section>
+			<h1>What's new in browser land?</h1>
+
+			<ol>
+				<li>a few additional HTML5 elements and attributes</li>
+				<li>some new JavaScript methods and browser APIs</li>
+				<li>a ton of CSS properties and techniques</li>
+			</ol>
+
+			<img src="assets/images/qr-techexeter24.svg" alt="QR code" class="r-stretch" />
+			<p><a href="https://craigbuckler.com/techexeter24/">craigbuckler.com/techexeter24</a></p>
+
+			<aside class="notes" data-markdown>
+				so let's get going!
+
+				new browser features have gone a bit bonkers over the past year or two. we've got
+
+				* a handful of HTML updates
+				* some new JavaScript methods and APIs
+				* but a ton of new CSS features - so we'll mostly look at those
+
+				this talk could be eight hours. I could have locked the doors and stopped you going for drinks
+
+				but instead I've cut it down to the new features I like
+
+				I hope they're useful and simple to follow
+
+				you'll have seen some before - but they may be used to demonstrate a new technique - so bear with me
+
+				of course there's other stuff which is very new
+
+				slides are online - I can't remember it all, so you shouldn't have to
+			</aside>
+		</section>
+
+		<section>
+			<h1>Craig Buckler</h1>
+
+			<p>freelance full stack web developer</p>
+
+			<div class="flex">
+				<img src="assets/images/craig-buckler.jpg" width="1571" height="1571" alt="Craig Buckler" style="width:30%;margin-right:0;border:5px solid #fff;" />
+				<img src="assets/images/qr-craigbuckler.svg" alt="QR code" style="width:30%;margin-left:0;border:5px solid #fff;" />
+			</div>
+
+			<h2><a href="https://craigbuckler.com/">craigbuckler.com</a></h2>
+
+			<aside class="notes" data-markdown>
+				uggh
+
+				I'm Craig Buckler
+
+				I'm a freelance full stack developer
+
+				some prefer to use the term "contractor scum"
+
+				I've been doing web stuff since the mid 90s
+
+				I've accumulated a lot of obscure knowledge
+
+				you may have seen tutorials and books I've written for SitePoint and others
+
+				and I'm available for hire - so you can find my details here
+			</aside>
+		</section>
+
+		<section>
+			<p><a href="https://web.dev/baseline">web.dev/baseline</a></p>
+
+			<img src="assets/images/webdev-baseline.png" width="1337" height="1227" alt="web.dev baseline screenshot" class="r-stretch" />
+
+			<aside class="notes" data-markdown>
+				enough about me
+
+				keeping up with new browser features is tricky
+
+				can follow the individual browser announcements - don't always give full story
+
+				Web Platform Baseline will help. it lists:
+
+				* new features supported by desktop and mobile versions Chrome, Edge, Firefox, and Safari
+				* and features which have been available in all those for at least 30 months
+
+				it gives yearly baselines, so 2023 features should be safe to use
+
+				2024 features will be more experimental
+			</aside>
+		</section>
+
+		<section>
+			<p><a href="https://web-platform-dx.github.io/web-features-explorer/">web-platform-dx.github.io/web-features-explorer/</a></p>
+
+			<img src="assets/images/web-features-explorer.png" width="1337" height="1227" alt="web features explorer screenshot" class="r-stretch" />
+
+			<aside class="notes" data-markdown>
+				the web features explorer
+
+				gives a breakdown of support by browser
+			</aside>
+		</section>
+
+		<section>
+			<p><a href="https://paulirish.github.io/web-feature-availability/">paulirish.github.io/web-feature-availability/</a></p>
+
+			<img src="assets/images/web-feature-availability.png" width="1337" height="1227" alt="web features availability screenshot" class="r-stretch" />
+
+			<aside class="notes" data-markdown>
+				and web feature availability
+
+				shows the percentage of users with a browser that supports a specific technology
+			</aside>
+		</section>
+
+		<section>
+			<p><a href="https://bcd-watch.igalia.com/">bcd-watch.igalia.com</a></p>
+
+			<img src="assets/images/bcd-watch.png" width="1337" height="1227" alt="BCD watch screenshot" class="r-stretch" />
+
+			<aside class="notes" data-markdown>
+				browser compatibility data watch
+
+				reports browser updates from the previous week
+
+				new service, so we'll see how that goes
+			</aside>
+		</section>
+
+		<section>
+			<h1>Documentation</h1>
+
+			<ul>
+				<li><a href="https://caniuse.com/">caniuse.com</a></li>
+				<li><a href="https://developer.mozilla.org/">developer.mozilla.org</a></li>
+			</ul>
+
+			<aside class="notes" data-markdown>
+				and of course there's
+
+				caniuse.com
+
+				where you can lookup feature support
+
+				and MDN which has the best documentation
+
+				it also shows caniuse compatibility information
+
+				big word of warning, though...
+			</aside>
+		</section>
+
+		<section>
+			<p class="r-fit-text"><em>you won't find this<br />stuff in AI tools!</em></p>
+
+			<aside class="notes" data-markdown>
+				AI tools don't know about new features
+
+				there's little documentation
+
+				so there's no code for AIs to copy
+
+				at best they'll say something's not possible
+
+				at worst they make some shit up
+			</aside>
+		</section>
+
+		<section>
+			<h1>When do you use new features?</h1>
+
+			<ul>
+				<li><strong>today</strong> - <em>screw old browsers and their luddite users!</em></li>
+				<li><strong>today</strong> - <em>I use Progressive Enhancement</em></li>
+				<li><strong>soon</strong> - <em>when browser support reaches X%</em></li>
+				<li><strong>never</strong> - <em>I have to support IE3 and hate my life</em></li>
+			</ul>
+
+			<p class="fragment r-fit-text" style="color:#f00;text-decoration:underline;">IT DEPENDS</p>
+
+			<aside class="notes" data-markdown>
+				I'm demonstrating browser fundamentals. you don't need a particular framework or tool
+
+				at least half of these features can be used today
+
+				most will allow you to drop libraries or at least reduce your CSS and JavaScript code
+
+				*big question is: when should you start using a new feature?*
+
+				I'm a big fan of progressive enhancement. Often misunderstood
+
+				in essence: create basic level of support then enhance it at runtime when possible
+
+				* CSS is already progressively enhanced. can also use "at supports" blocks
+				* and in JavaScript you can use feature detection and polyfills when necessary
+
+				but it can be more nuanced than that
+
+				[CLICK] really - it depends - *you'll hear me say this a lot*
+
+				some features have little support - but you can use them without any problems
+
+				other features are widely adopted - but far more risky when they're not available
+			</aside>
+		</section>
+
+		<section>
+
+			<h1><code>text-wrap</code> property</h1>
+
+			<div class="flex">
+
+				<div style="width:20em;">
+					<h2 style="text-align:left;line-height:1.1;">Title wrapping causes orphan words</h2>
+					<p style="text-align:left;">This is a long paragraph. Ideally, we want to avoid orphan words shown at the end of the text.</p>
+				</div>
+
+				<pre class="language-css" style="width:15em;"><code data-trim>
+					/* default */
+					h2, p {
+						text-wrap: wrap;
+					}
+				</code></pre>
+
+			</div>
+
+			<div class="fragment flex">
+
+				<div style="width:20em;">
+					<h2 style="text-align:left;line-height:1.1;text-wrap:balance;">Title wrapping causes orphan words</h2>
+					<p style="text-align:left;text-wrap:pretty;">This is a long paragraph. Ideally, we want to avoid orphan words shown at the end of the text.</p>
+				</div>
+
+				<pre class="language-css" style="width:15em;"><code data-trim>
+					h2 {
+						text-wrap: balance;
+					}
+
+					p {
+						text-wrap:pretty;
+					}
+				</code></pre>
+
+			</div>
+
+			<p class="status green">SAFE</p>
+
+			<aside class="notes" data-markdown>
+				let's look at some examples to demonstrate what I mean
+
+				by default, the CSS text-wrap property is set to wrap
+
+				that's fine, but you can get single orphan words at the end of sentences
+
+				[CLICK] the property now has a couple of new values
+
+				* balance balances the number of characters on each line - great for titles
+				* pretty keeps the number of orphans to a minimum - ideal for body copy
+
+				both are slower but you're unlikely to have a problem. and the result looks better
+
+				it's a baseline 2024 feature so very new - Safari only got support in May
+
+				but you can use it today - the worst that'll happen is an older browser reverts to the older layout
+
+				so there's a SAFE marker at the top right
+			</aside>
+		</section>
+
+		<section class="inert" data-auto-animate>
+
+			<h1><code>inert</code> attribute</h1>
+
+			<pre class="language-html" data-id="code-animation"><code data-trim data-line-numbers="1">
+				&lt;div inert&gt;&#10;&#9;&#9;&#9;&#9;&#9;&lt;button&gt;You can&apos;t click me!&lt;/button&gt;&#10;&#9;&#9;&#9;&#9;&lt;/div&gt;
+			</code></pre>
+
+			<pre class="fragment language-css" data-id="code-animation"><code data-trim style="overflow:hidden;">
+				[inert] {
+					opacity: 50%;
+				}
+			</code></pre>
+
+			<p class="fragment r-fit-text">safe but &hellip; <em>IT DEPENDS!</em></p>
+
+			<p class="status green">SAFE</p>
+
+			<aside class="notes" data-markdown>
+				another example
+
+				HTML inert attribute makes all child content unclickable - can't click buttons or links
+
+				[CLICK] and you can style it - perhaps dim it out
+
+				inert is a baseline 2023 feature - most browsers had it in 2022
+
+				so it's got more support than text-wrap and there's SAFE marker at top
+
+				I'd be happy to use it, but...
+
+				[CLICK] it depends
+
+				I'd have some nagging doubts
+
+				especially if I were creating an application where someone using an older browser
+
+				could click an inert control and cause a problem
+			</aside>
+		</section>
+
+		<section class="inert" data-auto-animate>
+
+			<h1><code>inert</code> attribute</h1>
+
+			<pre class="language-html" data-id="code-animation"><code data-trim data-line-numbers="1-3">
+				&lt;div inert&gt;&#10;&#9;&#9;&#9;&#9;&#9;&lt;button&gt;You can&apos;t click me!&lt;/button&gt;&#10;&#9;&#9;&#9;&#9;&lt;/div&gt;
+			</code></pre>
+
+			<pre class="language-css" data-id="code-animation"><code data-trim style="overflow:hidden;">
+				[inert] {
+					opacity: 50%;
+					pointer-events: none;
+				}
+			</code></pre>
+
+			<pre class="fragment language-js"><code data-trim>
+				document.addEventListener('click', e => {
+					if (e.target.closest('[inert]')) {
+						e.preventDefault();
+						e.stopPropagation();
+					}
+				}, true);
+			</code></pre>
+
+			<p class="status green">SAFE</p>
+
+			<aside class="notes" data-markdown>
+				I'd probably use a more resilient approach to cover all bases
+
+				CSS pointer-events can be set to none to ignore clicks - available since 2005
+
+				[CLICK] even that may not be enough
+
+				so I'd also ensure any JavaScript events were cancelled
+
+				it's best to do that in the application logic
+
+				but you could do that with a single handler like this
+			</aside>
+		</section>
+
+		<section class="accentcolor" inert>
+
+			<h1><code>accent-color</code></h1>
+
+			<pre class="language-css"><code data-trim>
+				body {
+					accent-color: red;
+				}
+			</code></pre>
+
+			<label><input type="checkbox" checked> checkbox</label>
+
+			<label><input type="radio" name="radio" checked> radio</label>
+			<label><input type="radio" name="radio"> radio</label>
+			<label><input type="radio" name="radio"> radio</label>
+
+			<p><code>&lt;input type="range"&gt;</code></p>
+			<input type="range" min="1" max="100" value="70">
+
+			<p><code>&lt;progress&gt;</code></p>
+			<progress max="100" value="70">70%</progress>
+
+			<p class="status green">SAFE</p>
+
+			<aside class="notes" data-markdown>
+				next example: CSS accent-color available since 2021
+
+				adds a color to checkboxes, radio buttons, ranges, and progress bars
+
+				these can be hard to style
+
+				but it's NOT a baseline feature - Safari doesn't ensure good contrast
+
+				if you use a black accent color, Safari shows checkboxes with a black tick on a black background
+
+				still safe - if you're using a lighter colour
+
+				or might be able to use Safari's new switch attribute - makes it look like a toggle control
+
+				old browsers actually better: they ignore the property and there's no accent colour
+
+				probably safer than inert - gets a SAFE marker
+			</aside>
+		</section>
+
+		<section>
+			<h1>Vertically aligning content</h1>
+
+			<p class="fragment"><code>align-content: center;</code> available in flexbox and grid&hellip;</p>
+
+			<div class="fragment">
+				<p>&hellip;now <code>align-content: center;</code> now works in <em>any</em> block!</p>
+				<iframe data-src="assets/align-content.html" width="1800" height="800"></iframe>
+			</div>
+
+			<aside class="notes" data-markdown>
+				next example: vertically centering a block inside another used to be tricky in CSS
+
+				depended on whether you knew heights or not
+
+				* fiddle with padding and margins
+				* use line-height tricks
+				* set it as a table cell
+				* or use a transform with a negative margin
+
+				[CLICK] flexbox and grid made it easy - set align-content center
+
+				but parent element had to set a flexbox or grid - could cause complications or you needed wrapper elements
+
+				[CLICK] no need to do that any longer!
+
+				align-content works in any block
+
+				you can set it to start, center, or end
+
+				[DEMO] you can set flex values which is a bit weird
+			</aside>
+		</section>
+
+		<section>
+			<h1><code>align-content</code> support</h1>
+
+			<p>block layout support in all main browsers since March 2024</p>
+
+			<ul>
+				<li class="fragment">little point updating existing layouts</li>
+				<li class="fragment">could consider for new projects</li>
+				<li class="fragment">can't test <code>@supports (align-content: center)</code></li>
+				<li class="fragment">old browsers will align elements to the top</li>
+			</ul>
+
+			<p class="status amber">CAUTION</p>
+
+			<aside class="notes" data-markdown>
+				baseline 2024 feature available everywhere since March
+
+				[CLICK] your existing templates probably aren't using it - fine - don't update
+
+				[CLICK] safe to use in new projects - could simplify layouts
+
+				[CLICK] but can't test for it using CSS at @supports
+
+				align-content has been a valid property since 2013
+
+				[CLICK] a year old browser will align elements to the top
+
+				personally, I wouldn't care - no design should be that critical
+
+				your clients and designers may not agree - so it DEPENDS!
+
+				feature gets a CAUTION marker
+
+				you can use it, but just be aware of the consequences
+			</aside>
+
+		</section>
+
+		<section>
+			<h1>Native CSS nesting</h1>
+
+			<pre class="language-css"><code data-trim>
+				.parent {
+
+					p { ... }
+					.child { ... }
+					&.special { ... }
+					.before + & { ... }
+
+				}
+			</code></pre>
+
+			<p class="status red">BEWARE</p>
+			<aside class="notes" data-markdown>
+				native selector nesting is now a baseline feature - good support since December 2023
+
+				early versions had some restrictions
+
+				now works in a similar way to Sass - with a few gotchas
+
+				does this mean you can throw away your CSS build tools?
+			</aside>
+		</section>
+
+		<section>
+			<h1>Native CSS nesting</h1>
+
+			<p>You <em>can</em> test for CSS support&hellip;</p>
+
+			<pre class="language-css"><code data-trim>
+				@supports selector(&) {
+					/* nested CSS */
+					main {
+						h1 { color: #333; }
+					}
+				}
+
+				@supports not (selector(&)) {
+					/* non-nested CSS */
+					main h1 { color: #333; }
+				}
+			</code></pre>
+
+			<p><em>&hellip;but why would you?!</em></p>
+
+			<p class="status red">BEWARE</p>
+			<aside class="notes" data-markdown>
+				I suspect not.
+
+				problem: old browsers ignore nested selectors. Old - I mean a browser from 12 months ago
+
+				can test support. but why - you won't write a nested and non-nested version
+
+				given nesting a BEWARE marker - probably best not to use it just yet
+
+				I'm using native nesting now - but using esbuild to expand it into the full legacy selectors
+
+				esbuild is great by the way
+
+				it's fast and it can bundle both CSS and JavaScript
+
+				POINT: keep an eye on this marker at the top throughout the rest of the presentation
+			</aside>
+		</section>
+
+		<section>
+			<h1>CSS logical properties</h1>
+
+			<table>
+				<thead>
+					<tr><th>(old) physical property</th><th>(new) logical property</th></tr>
+				</thead>
+				<tbody>
+					<tr><td><code>margin-top</code></td><td><code>margin-block-start</code></td></tr>
+					<tr><td><code>margin-bottom</code></td><td><code>margin-block-end</code></td></tr>
+					<tr><td><code>margin-left</code></td><td><code>margin-inline-start</code></td></tr>
+					<tr><td><code>margin-right</code></td><td><code>margin-inline-end</code></td></tr>
+					<tr><td><code>top</code></td><td><code>inset-block-start</code></td></tr>
+					<tr><td><code>bottom</code></td><td><code>inset-block-end</code></td></tr>
+					<tr><td><code>left</code></td><td><code>inset-inline-start</code></td></tr>
+					<tr><td><code>right</code></td><td><code>inset-inline-end</code></td></tr>
+				</tbody>
+			</table>
+
+			<p class="status green">SAFE</p>
+
+			<aside class="notes" data-markdown>
+				let's get into it properly now
+
+				possibly seen logical properties. Not new - around since 2021
+
+				they're alternatives to physical properties that use top, left, bottom, and right
+
+				there are some examples, and others for paddings, borders, radiuses
+
+				it's more typing so you may have thought "what's the point?"
+
+				physical properties only make sense in latin based languages written left to right and top to bottom
+
+				not suited to Arabic - right to left - or Japanese - top to bottom
+
+				you may only have an English site or app - can you guarantee it'll never be localized elsewhere?
+
+				if you use logical properties with grid and flexbox
+
+				your layout can be localized by changing just two values
+			</aside>
+		</section>
+
+		<section>
+
+			<iframe data-src="assets/intl1.html" width="1100" height="1000"></iframe>
+
+			<p class="status green">SAFE</p>
+
+			<aside class="notes" data-markdown>
+				here's a typical site design. It'll win awards. You're welcome to copy it
+
+				grid for the main page layout. flexbox in header and menu. logical properties throughout
+
+				HTML tag has a dir attribute: English sets left-to-right
+
+				[DEMO CLICK] set right-to-left, you get a layout suitable for Arabic
+
+				[DEMO CLICK] set CSS writing-mode property to vertical L R - you get a Japanese layout
+
+				[DEMO CLICK] and there are other modes
+
+				changing one or two values makes the design work in all locales because we used logical properties
+
+				just the start of your problems: still need to translate everything
+
+				worth looking at my TechExeter talk about the JavaScript internationalization API
+			</aside>
+		</section>
+
+		<section>
+			<h1>Animation easing</h1>
+
+			<pre class="language-css"><code data-trim>
+				animation: 2s cubic-bezier(0.7, 1.9, 0.6, 0.4) 0s infinite normal bounce;
+			</code></pre>
+
+			<div class="flex">
+
+				<svg id="bezier1" xmlns="http://www.w3.org/2000/svg" viewBox="-0.2 -1 1.4 2.2" preserveAspectRatio="xMidYMid">
+					<defs><style>
+					#bezier1 {
+						width: 400px;
+						height: 600px;
+
+						line, path, circle {
+							stroke: #fff;
+							stroke-width: 0.01;
+							stroke-linecap: round;
+							fill: none;
+						}
+						line.control {
+							stroke: #999;
+							stroke-dasharray: 0.03,0.03;
+						}
+						path {
+							stroke: #c00;
+							stroke-width: 0.04;
+						}
+						circle {
+							stroke: #d00;
+							fill: #fff;
+						}
+						text {
+							font-family: sans-serif;
+							font-size: 0.1px;
+							fill: #ccc;
+						}
+					}
+					</style></defs>
+
+						<line x1="0" y1="0" x2="0" y2="1" />
+						<line x1="0" y1="1" x2="1" y2="1" />
+
+						<circle cx="0.7" cy="-0.9" r="0.05" />
+						<line x1="0.7" y1="-0.9" x2="0" y2="1" class="control" />
+
+						<circle cx="0.6" cy="0.6" r="0.05" />
+						<line x1="0.6" y1="0.6" x2="1" y2="0" class="control" />
+
+						<path d="M0,1 C0.7,-0.9 0.6,0.6 1,0" />
+
+						<text x="0" y="1.03" text-anchor="start" dominant-baseline="hanging">TIME</text>
+						<text x="1" y="1.03" text-anchor="end" dominant-baseline="hanging">1</text>
+						<text x="-1" y="-0.03" text-anchor="start" transform="rotate(-90)">PROGRESS</text>
+						<text x="-0.02" y="0" text-anchor="end" dominant-baseline="hanging">1</text>
+					</svg>
+
+					<div class="ball bounce-bezier"></div>
+
+				</div>
+				<aside class="notes" data-markdown>
+					let's look at something more fun: animations
+
+					CSS offers some basic animation timing functions: linear, ease-out, ease-in, ease-in-out
+
+					and they all define an animation curve which plots the progress of a property
+
+					over a time starting at 0 and ending at 1
+
+					you can define your own bezier animation curves like this with just two control points
+
+					powerful because curves can go outside the 0 to 1 limit or come back on themselves and bounce
+
+					fine for simple animations but still not very natural - you'll notice
+
+					* this ball decelerates slightly before the bounce
+					* and it'll only bounce once
+
+					for something more sophisticated, you require JavaScript and a physics animation library
+				</aside>
+		</section>
+
+		<section>
+			<h1><code>linear()</code> easing function</h1>
+
+			<pre class="language-css"><code data-trim>
+				animation-timing-function:
+					linear(0, 0.06, 0.25, 0.56, 1, 0.81, 0.75, 0.81, 1, 0.94, 1 91%, 0.98, 1);
+			</code></pre>
+
+			<div class="flex">
+
+				<svg id="linear1" xmlns="http://www.w3.org/2000/svg" viewBox="-0.2 -1 1.4 2.2" preserveAspectRatio="xMidYMid">
+					<defs><style>
+					#linear1 {
+						width: 400px;
+						height: 600px;
+
+						line, path, circle {
+							stroke: #fff;
+							stroke-width: 0.01;
+							stroke-linecap: round;
+							fill: none;
+						}
+						line.control {
+							stroke: #999;
+							stroke-dasharray: 0.03,0.03;
+						}
+						path {
+							stroke: #c00;
+							stroke-width: 0.04;
+						}
+						circle {
+							stroke: #d00;
+							fill: #fff;
+						}
+						text {
+							font-family: sans-serif;
+							font-size: 0.1px;
+							fill: #ccc;
+						}
+					}
+					</style></defs>
+
+						<line x1="0" y1="0" x2="0" y2="1" />
+						<line x1="0" y1="1" x2="1" y2="1" />
+
+						<path d="M 0 1,0.09 0.94,0.18 0.75,0.27 0.44,0.36 0,0.45 0.19,0.55 0.25,0.64 0.19,0.73 0,0.82 0.06,0.91 0,0.95 0.02,1 0" />
+
+						<text x="0" y="1.03" text-anchor="start" dominant-baseline="hanging">TIME</text>
+						<text x="1" y="1.03" text-anchor="end" dominant-baseline="hanging">1</text>
+						<text x="-1" y="-0.03" text-anchor="start" transform="rotate(-90)">PROGRESS</text>
+						<text x="-0.02" y="0" text-anchor="end" dominant-baseline="hanging">1</text>
+					</svg>
+
+					<div class="ball linear"></div>
+
+				</div>
+
+				<p><a href="https://linear-easing-generator.netlify.app/">linear-easing-generator.netlify.app</a></p>
+				<p class="status green">SAFE</p>
+
+				<aside class="notes" data-markdown>
+					until now that is
+
+					this is the new linear() easing function
+
+					don't confuse with the linear easing keyword
+
+					has been available since late 2023
+
+					defines an animation curve as a series of stop-point lines
+
+					just 12 points creates a natural three-bounce animation
+
+					defining the curve is a little tricky
+
+					but there are some generator tools such as the one shown here
+				</aside>
+		</section>
+
+		<section>
+			<h1>Scroll-driven animations</h1>
+
+			<iframe data-src="assets/scroll-driven.html" width="1100" height="800"></iframe>
+
+			<aside class="notes" data-markdown>
+				sticking with animated effects
+
+				love em or hate em, scroll based animations are used a lot on the web
+
+				it's where the page's scroll position effects the animation itself
+
+				there are sites which animate everything as you scroll - it's really distracting
+
+				but there are good uses
+
+				[DEMO] so here
+
+				* a reading progress bar shows how much you've read
+
+				* and images animate as they go in and out of the viewport
+			</aside>
+		</section>
+
+		<section>
+			<h1>Scroll-driven animations</h1>
+
+			<p>JavaScript-based animations are tricky</p>
+
+			<ul>
+				<li class="fragment">Intersection Observer API good for entry and exit&hellip;</li>
+				<li class="fragment">&hellip;but not for progress</li>
+				<li class="fragment">window <code>scroll</code> event handlers</li>
+				<li class="fragment"><code>scrollTop</code> and <code>clientHeight</code> calculations</li>
+				<li class="fragment">element <code>offsetTop</code>, <code>offsetLeft</code>, <code>getBoundingClientRect()</code> calculations</li>
+				<li class="fragment">&hellip;all cause a browser reflow</li>
+				<li class="fragment">Intersection Observer <code>boundingClientRect</code> property is better</li>
+				<li class="fragment">calculations still use main processing thread</li>
+			</ul>
+
+			<p class="fragment r-fit-text" style="color:#f33;">janky performance!</p>
+
+			<aside class="notes" data-markdown>
+				until now, we needed JavaScript to trigger scroll-based animations. libraries exist - has anyone written their own? This gets geeky!
+
+				[CLICK] Intersection Observer API since 2016. Bit odd - but determines when an element moves in or out of the viewport
+
+				[CLICK] based on thresholds. good for starting an animation. doesn't know about the page's current scroll position
+
+				[CLICK] still need window scroll event handlers
+
+				[CLICK] then need to calculate the size of the viewport and how far you've scrolled
+
+				[CLICK] then need to calculate an element's dimensions and where it sits in the viewport
+
+				[CLICK] all cause a browser reflow. not changing anything - browser needs to recalculate the position of every element. expensive
+
+				[CLICK] can use Intersection Observer boundingClientRect property - calculates element dimensions off main thread
+
+				[CLICK] but still need calculations on the main thread. Can't use Web Workers - need DOM access
+
+				all calculations have to be restarted when a browser is resized or a phone's rotated
+
+				[CLICK] the result can be janky performance
+			</aside>
+		</section>
+
+		<section>
+			<h1>Scroll-driven animations</h1>
+
+			<iframe data-src="assets/scroll-driven.html" width="1100" height="800"></iframe>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				going back to our example
+
+				[SHOW]
+
+				there's no jankiness because it uses CSS scroll linked animations
+
+				it's new, can seem complex, and things may change
+
+				but it doesn't require JavaScript
+
+				and calculations occur off the main thread
+
+				you can use it today
+			</aside>
+		</section>
+
+		<section>
+			<h1>Progress bar animation</h1>
+
+			<pre class="language-html"><code data-trim>
+				&lt;div id=&quot;progress&quot;&gt;&lt;/div&gt;
+			</code></pre>
+
+			<pre class="fragment language-css"><code data-trim data-trim data-line-numbers="1-3|4|5|9-12|6">
+				#progress {
+					position: fixed; inset: 0; height: 1em;
+					background-color: #c00;
+					transform-origin: 0;
+					animation: auto linear scaleX both;
+					animation-timeline: scroll();
+				}
+
+				@keyframes scaleX {
+					0% { transform: scaleX(0); }
+					100% { transform: scaleX(1); }
+				}
+			</code></pre>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				progress bar starts with a DIV
+
+				[CLICK] we'll make it red and fix it to the top of the viewport
+
+				[CLICK] set transform origin so it grows from the left rather than the middle
+
+				[CLICK] next we'll set an animation named scaleX
+
+				[CLICK] that just scales the width from 0 to 100%
+
+				[CLICK] here's where the magic happens
+
+				we set a new animation-timeline property to a scroll() function
+
+				that links the animation keyframes to how far the page has been scrolled from 0 to 100 percent
+
+				the default is vertical viewport scrolling
+
+				but you can use it on any scrollable container in any direction
+
+				that's all you need for the progress bar
+			</aside>
+		</section>
+
+		<section>
+			<h1>Image animations</h1>
+
+			<pre class="language-html"><code data-trim>
+				&lt;img src=&quot;images/puffin.jpg&quot; width=&quot;900&quot; height=&quot;600&quot; alt=&quot;puffin&quot; /&gt;
+			</code></pre>
+
+			<pre class="fragment language-css"><code data-trim data-trim data-line-numbers="1-2|3|8-11|4|5">
+				img {
+					width: 100%; height: auto;
+					animation: auto linear reveal both;
+					animation-timeline: view();
+					animation-range: entry 5% cover 50%;
+				}
+
+				@keyframes reveal {
+					0% { opacity: 0; clip-path: inset(0% 50% 0% 50%); }
+					100% { opacity: 1; clip-path: inset(0% 0% 0% 0%); }
+				}
+			</code></pre>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				the image entry and exit animation is a little different. start with a standard image tag
+
+				[CLICK] and size it as we want in CSS
+
+				[CLICK] next we'll set an animation named reveal
+
+				[CLICK] that sets opacity and clipping
+
+				[CLICK] in this case, we set the animation-timeline property to a view() function
+
+				this triggers the keyframes when the element's in view
+
+				[CLICK] animation-range sets the animation's starting and ending points according to the proportion of the element in the viewport
+
+				* entry 5% - means at least 5% of our image is in view when the animation starts
+				* cover 50% - means the centre of the image has reached the centre of the viewport when the animation ends
+
+				all happens off the main thread with no lag
+			</aside>
+		</section>
+
+		<section>
+			<h1>Scroll-driven animations</h1>
+
+			<iframe data-src="assets/scroll-driven-off.html" width="1100" height="800"></iframe>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				that gives you a taster. There are far more options and possibilities
+
+				it only works in the Chrome based browsers since mid 2023
+
+				Firefox has it behind a feature flag and Safari hasn't got anything yet
+
+				so you may be wondering why I'm claiming it's safe
+
+				these new scroll animation properties are ignored when the browser doesn't support them
+
+				that means all animations run immediately and are displayed in their final state
+
+				this is what you see in Safari, Firefox, and older browsers
+
+				images appear as normal
+
+				and you'd see a 100% progress bar - and you could use at @supports to hide that
+			</aside>
+		</section>
+
+		<section>
+
+			<iframe data-src="assets/view-transition1.html" width="1200" height="950"></iframe>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				want some more exciting animations?
+
+				view transitions have been around for a while in single page apps
+
+				allow you to pick parts of your page and animate from a start to an ending state
+
+				and you don't have to manage two sets of DOM elements
+
+				it's now available to multi-page sites and apps
+
+				when you're navigating around the same domain
+
+				[DEMO]
+
+				this shows animations between two pages. doesn't look like it
+
+				you can use effects like this in any WordPress or static site
+
+				it'll only work in recent Chrome browsers but other browsers will just fallback to no animation
+			</aside>
+		</section>
+
+		<section>
+
+			<h1>Multi-page view transitions</h1>
+
+			<pre class="language-css"><code data-trim data-line-numbers="1|3-5|7-9|11-19">
+				@view-transition { navigation: auto; }
+
+				::view-transition-old(root) {
+					animation: 2s pagetransition-out 0s linear;
+				}
+
+				::view-transition-new(root) {
+					animation: 2s pagetransition-in 0s linear;
+				}
+
+				@keyframes pagetransition-out {
+					from { opacity: 1; }
+					to { opacity: 0; }
+				}
+
+				@keyframes pagetransition-in {
+					from { opacity: 0; }
+					to { opacity: 1; }
+				}
+			</code></pre>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				code for doing this has changed recently and is done in CSS alone
+
+				you first enable view transitions
+
+				[CLICK] then you specify the animation to use when animating the current page out
+
+				root applies the same effect to the whole page, but you can select individual elements and animate them differently
+
+				[CLICK] there's a similar animation set when animating the new page in
+
+				[CLICK] followed by the keyframes themselves
+
+				fewer than 20 lines of CSS. In the past you'd have required
+
+				* JavaScript
+				* an Ajax loader
+				* and some heavy DOM shenanigans
+			</aside>
+		</section>
+
+		<section>
+			<h1>Popovers</h1>
+
+			<iframe data-src="assets/popover1.html" width="1100" height="800"></iframe>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				everyone heard about HTML popovers?
+
+				they're an ideal starting point for things like tooltips, notifications, error messages
+
+				they sit on top of everything else with a style-able backdrop
+
+				and they can be opened and closed without any JavaScript
+			</aside>
+		</section>
+
+		<section>
+			<h1>Popovers</h1>
+
+			<pre class="language-html"><code data-trim data-line-numbers="1|2">
+				&lt;p popover id=&quot;tooltip&quot;&gt;a tooltip&lt;/p&gt;
+				&lt;button popovertarget=&quot;tooltip&quot;&gt;click me&lt;/button&gt;
+			</code></pre>
+
+			<pre class="fragment language-js"><code data-trim>
+				const tooltip = document.getElementById('tooltip');
+				tooltip.showPopover();
+				tooltip.hidePopover();
+			</code></pre>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				any element can be given a popover attribute and an ID so it can be referenced
+
+				[CLICK] then any button can refer to that ID with a popovertarget attribute
+
+				[CLICK] can also show or hide popovers using the element's showPopover and hidePopover methods
+
+				that's useful if you want to trigger them from something other than a button
+			</aside>
+		</section>
+
+		<section>
+			<h1>HTML <code>&lt;dialog&gt;</code></h1>
+
+			<iframe data-src="assets/dialog1.html" width="1100" height="800"></iframe>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				the  HTML dialog element is similar
+
+				but it's for modal dialogs and requires a little JavaScript
+
+				[DEMO]
+
+				it's been around for a couple of years so it's safe to use
+
+				good thing about popovers and dialogs:
+
+				* they're easy to style
+				* you can style the backdrop that covers the rest of the page
+				* they default to a fixed position in the centre of the viewport
+				* they respond to keyboard events like pressing escape
+				* and they sit in their own special top-layer container
+
+				which above everything else
+
+				you can set your z-indexes to any value and they'll still work
+			</aside>
+		</section>
+
+		<section>
+			<h1><code>&lt;dialog&gt;</code> code</h1>
+
+			<pre class="language-html"><code data-trim data-line-numbers="1,9|3|5-7|11">
+				&lt;dialog id=&quot;dialog&quot;&gt;
+
+					&lt;p&gt;I&apos;m an annoying modal popup dialog!&lt;/p&gt;
+
+					&lt;form method=&quot;dialog&quot;&gt;
+						&lt;button&gt;Close&lt;/button&gt;
+					&lt;/form&gt;
+
+				&lt;/dialog&gt;
+
+				&lt;button id=&quot;open-button&quot;&gt;open dialog&lt;/button&gt;
+			</code></pre>
+
+			<pre class="fragment language-js"><code data-trim>
+				document.getElementById('open-button').addEventListener('click', () =>
+					document.getElementById('dialog').showModal()
+				);
+			</code></pre>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				here's the HTML
+
+				you define a dialog element. I've assigned an ID so it's easier to manage
+
+				[CLICK] you can then put any content you like on it
+
+				[CLICK] if you add a form with a dialog method
+
+				it'll close the dialog when it's submitted
+
+				[CLICK] here's a button to open the dialog
+
+				[CLICK] and it has a click event handler
+
+				which runs the showModal method of the dialog element
+			</aside>
+		</section>
+
+		<section>
+			<h1>Opened <code>&lt;dialog&gt;</code></h1>
+
+			<pre class="language-html"><code data-trim data-line-numbers="1|9">
+				&lt;dialog id=&quot;dialog&quot; open&gt;
+
+					&lt;p&gt;I&apos;m an annoying modal popup dialog!&lt;/p&gt;
+
+					&lt;form method=&quot;dialog&quot;&gt;
+						&lt;button&gt;Close&lt;/button&gt;
+					&lt;/form&gt;
+
+					::backdrop
+
+				&lt;/dialog&gt;
+			</code></pre>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				dialogs start with the CSS display set to none
+
+				when they're shown, the browser adds an "open" attribute to the dialog element
+
+				which sets the display to block so the dialog's visible
+
+				[CLICK] and it also appends a backdrop pseudo element
+
+				that's shown below the dialog so you can't interact with the page until the dialog's closed
+
+				and popovers are handled in a very similar way
+			</aside>
+		</section>
+
+		<section>
+			<h1><code>&lt;dialog&gt;</code> styling</h1>
+
+			<pre class="language-css"><code data-trim data-line-numbers="3|5-8|10-12|1">
+				html { scrollbar-gutter: stable; }
+
+				dialog { /* ... */ }
+
+				dialog::backdrop {
+					background-color: rgba(0, 0, 0, 0.5);
+					backdrop-filter: blur(6px);
+				}
+
+				html:has(dialog[open]) {
+					overflow: hidden;
+				}
+			</code></pre>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				popovers, dialogs, and child elements are all style-able
+
+				[CLICK] and that includes the backdrop
+
+				[CLICK] we can do clever things with the :has parent selector
+
+				here, we're setting overflow hidden on the HTML element when any dialog is open
+
+				that means the page can't be scrolled
+
+				normally, it would remove the scrollbar
+
+				any centered content would jump about 10 pixels to the right
+
+				[CLICK] but - if we set scrollbar-gutter to stable
+
+				it reserves space for the scrollbar even though it doesn't need one
+
+				this has been around a couple of years but it's not in Safari yet
+			</aside>
+		</section>
+
+		<section>
+			<h1>HTML <code>&lt;dialog&gt;</code> styling</h1>
+
+			<iframe data-src="assets/dialog2.html" width="1100" height="800"></iframe>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				here's how it looks - the backdrop is styled and we can't scroll the page
+
+				bit boring though
+
+				it'd be nice if the dialog could animate in and out
+
+				but has anyone tried animating between display none and display block
+
+				it can't be done - they're discrete states
+
+				an element's either displayed or it's not - there's no in-between state you can transition
+
+				normally you'd have to hack around that
+
+				you could add opening and closing classes on the dialog element using JavaScript
+
+				but it's a pain - and you don't need to do that any more!
+			</aside>
+		</section>
+
+		<section>
+			<h1>Entry and exit animations</h1>
+
+			<pre class="language-css"><code data-trim data-line-numbers="3-4|6,8,9|11-19|23-30">
+				dialog {
+
+					transition: all 0.6s ease-out;
+					transition-behavior: allow-discrete;
+
+					&[open] {
+
+						opacity: 1;
+						transform: none;
+
+						@starting-style {
+							display: block;
+							opacity: 0;
+							transform:
+								scale(0.8)
+								translateY(-70vh)
+								rotateX(90deg)
+								perspective(500px);
+						}
+
+					}
+
+					&:not([open]) {
+						display: none;
+						opacity: 0;
+						transform:
+							scale(0.8)
+							translateX(100vw)
+							skewX(-30deg);
+					}
+				}
+			</code></pre>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				we can now create entry and exit animations in CSS alone without JavaScript
+
+				I'm using it on the dialog element but this technique works anywhere
+
+				we start by defining a basic transition
+
+				magic part is the transition-behavior property - it allows discrete properties such as display
+
+				[CLICK] next we'll set the styles when the dialog is opened
+
+				[CLICK] then we have a new at starting-style rule
+
+				which defines the styles at the very start of the animation
+
+				I've explicitly set display block but dialogs do that anyway
+
+				[CLICK] finally, we have the styles it'll animate to when fully closed
+
+				display none set. but discrete transitions ensure it only occurs at the very end of the animation
+			</aside>
+		</section>
+
+		<section>
+			<h1>Entry and exit animations</h1>
+
+			<iframe data-src="assets/dialog3.html" width="1100" height="800"></iframe>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				this is the result
+
+				[DEMO]
+
+				entry and exit animations are safe to use now - supported in Chrome and Safari
+
+				Firefox has partial support - you won't see exit animations
+
+				older browsers still show the dialog - it's just not animated
+			</aside>
+		</section>
+
+		<section>
+			<h1><code>&lt;details&gt;/&lt;summary&gt;</code> accordion</h1>
+
+			<div class="flex">
+
+				<iframe data-src="assets/accordion1.html" width="1000" height="800"></iframe>
+
+				<pre class="language-html"><code data-trim>
+					&lt;details&gt;
+						&lt;summary&gt;What is HTML?&lt;/summary&gt;
+
+						&lt;p&gt;Hypertext Markup Language&lt;/p&gt;
+						&lt;p&gt;Used for web page content.&lt;/p&gt;
+					&lt;/details&gt;
+				</code></pre>
+
+			</div>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				the HTML details and summary tags have been around since 2011
+
+				you can use them to show accordions and similar controls
+
+				[DEMO] ideal for FAQs, expandable comments, ...
+
+				you define a details block
+
+				with a summary that contains the header
+
+				when that header is clicked, an open attribute is added to the details tag
+
+				which shows the rest of the content
+
+				you can also add that open attribute in HTML or JavaScript to force it open
+
+				styling is straight forward
+
+				but each details block opens independently
+
+				opening one won't close the others
+			</aside>
+		</section>
+
+		<section>
+			<h1>Exclusive accordion</h1>
+
+			<div class="flex">
+
+				<iframe data-src="assets/accordion2.html" width="1000" height="800"></iframe>
+
+				<pre class="language-html"><code data-trim data-line-numbers="1,6">
+					&lt;details name="faq"&gt;
+						&lt;summary&gt;What is HTML?&lt;/summary&gt;
+						&lt;p&gt;Hypertext Markup Language&lt;/p&gt;
+					&lt;/details&gt;
+
+					&lt;details name=&quot;faq&quot;&gt;
+						&lt;summary&gt;What is CSS?&lt;/summary&gt;
+						&lt;p&gt;Cascading Style Sheets&lt;/p&gt;
+					&lt;/details&gt;
+				</code></pre>
+
+			</div>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				well, that was the case until September
+
+				now all browsers support a name attribute on details blocks
+
+				it makes exclusive accordions
+
+				[DEMO] clicking any summary will open it and close the others
+
+				---
+
+				it'd be nice if we could animate the height of these blocks to auto
+
+				we've all tried animating to auto at some point and been disappointed when it doesn't work
+
+				that's because browsers are a bit dim
+
+				they can't interpolate from a discrete number of pixels such as zero to a keyword like auto
+
+				...until now that is
+			</aside>
+		</section>
+
+		<section>
+			<h1>Animate to <code>auto</code></h1>
+
+			<div class="flex">
+
+				<iframe data-src="assets/accordion3.html" width="1000" height="800"></iframe>
+
+				<pre class="language-css"><code data-trim data-line-numbers="1-3,6,12">
+					:root {
+						interpolate-size: allow-keywords;
+					}
+
+					details {
+						height: 1.6em;
+						overflow-y: clip;
+						transition: all 0.5s ease-out;
+					}
+
+					details[open] {
+						height: auto;
+					}
+				</code></pre>
+
+			</div>
+
+			<p class="status green">SAFE</p>
+			<aside class="notes" data-markdown>
+				you just need to a new "interpolate-size: allow-keywords" CSS property
+
+				and animate to auto will magically start working
+
+				[DEMO]
+
+				you can add it to the root selector to apply it everywhere
+
+				or just use it on specific elements
+
+				really new - Chrome 129 and nothing else
+
+				and details element animations only work when opening but not closing
+
+				but an update's coming soon that'll fix it
+
+				it should be safe to use interpolate-size
+
+				any browser that doesn't support it will fall back to no animation
+			</aside>
+		</section>
+
+		<section>
+			<h1>Animate to <code>auto</code></h1>
+
+			<div class="flex">
+
+				<iframe data-src="assets/accordion3.html" width="1000" height="800"></iframe>
+
+				<pre class="language-css"><code data-trim data-line-numbers="9|10-12|8">
+					details {
+						height: 1.6em;
+						overflow-y: clip;
+						transition: all 0.5s ease-out;
+					}
+
+					details[open] {
+						height: auto;
+						height: calc-size(auto, size);
+						height:	calc-size(auto,
+							calc(size + 2em)
+						);
+					}
+				</code></pre>
+
+			</div>
+
+			<p class="status amber">CAUTION</p>
+			<aside class="notes" data-markdown>
+				and interpolate-size not the only option
+
+				you can use the calc-size property instead
+
+				[DEMO] it does the same thing
+
+				[CLICK] main reason for using this is the size value - which is the element's real height
+
+				can be used in calculations - add extra space or whatever
+
+				again, only in Chrome 129
+
+				calc-size won't be understood by a lot of browsers
+
+				[CLICK] so set an auto value first
+
+				older browsers will use that and ignore any calc-size properties
+			</aside>
+		</section>
+
+		<section>
+			<h1>Light and dark themes</h1>
+
+			<img src="assets/images/theme-switch.gif" width="700" height="228" alt="switch themes" class="r-stretch" />
+
+			<p><em>How many CSS properties does this require?</em></p>
+
+			<ul>
+				<li class="fragment">4 properties</li>
+				<li class="fragment">1 property</li>
+				<li class="fragment">no properties</li>
+				<li class="fragment"><em style="color:#f99;">get on with it!</em></li>
+			</ul>
+
+			<aside class="notes" data-markdown>
+				let's move on to theming
+
+				you've all seen theme switchers where a site's colours change according to the user's OS preference
+
+				and it may offer a manual switch so you can override that
+
+				let's have a quick quiz
+
+				what's the minimum number of CSS properties you need to do this?
+
+				[CLICK x 4]
+
+				How many think I should get on with it and stop the audience participation nonsense?
+			</aside>
+		</section>
+
+		<section>
+			<h1>Answer: <em>no CSS!</em></h1>
+
+			<pre class="language-html"><code data-trim data-line-numbers="6">
+&#9;&#9;&#9;&#9;&lt;!DOCTYPE html&gt;&#10;&#9;&#9;&#9;&#9;&lt;html lang=&quot;en&quot;&gt;&#10;&#9;&#9;&#9;&#9;&lt;head&gt;&#10;&#9;&#9;&#9;&#9;&lt;meta charset=&quot;UTF-8&quot;&gt;&#10;&#9;&#9;&#9;&#9;&lt;title&gt;theme&lt;/title&gt;&#10;&#9;&#9;&#9;&#9;&lt;meta name=&quot;color-scheme&quot; content=&quot;dark light&quot;&gt;&#10;&#9;&#9;&#9;&#9;&lt;body&gt;&#10;&#9;&#9;&#9;&#9;&#9;&lt;h1&gt;Theme me up, Scotty!&lt;/h1&gt;&#10;&#9;&#9;&#9;&#9;&lt;/body&gt;&#10;&#9;&#9;&#9;&#9;&lt;/html&gt;
+			</code></pre>
+
+			<pre class="fragment language-css"><code data-trim>
+				html {
+					color-scheme: dark light;
+				}
+			</code></pre>
+
+			<p class="status green">SAFE</p>
+
+			<aside class="notes" data-markdown>
+				The answer, somewhat amazingly is no CSS
+
+				you can do it in a meta tag
+
+				[CLICK] to be fair, you can do it in one CSS property too
+
+				it doesn't matter whether you use "dark light" or "light dark"
+
+				again, this is safe to use because older browser will simply ignore it
+			</aside>
+		</section>
+
+		<section>
+
+			<h1><code>&lt;system-color&gt;</code> values</h1>
+
+			<pre class="language-css"><code data-trim>
+				/*
+					AccentColor AccentColorText ActiveText ButtonBorder
+					ButtonFace ButtonText Canvas CanvasText Field
+					FieldText GrayText Highlight HighlightText LinkText
+					Mark MarkText SelectedItem SelectedItemText VisitedText
+				*/
+
+				h2 {
+					color: ButtonText;
+				}
+			</code></pre>
+
+			<p class="status green">SAFE</p>
+
+			<aside class="notes" data-markdown>
+				the way this works: browser sets default system colors
+
+				it has a light mode set and a dark mode set
+
+				so it applies those to the CSS system colors named here
+
+				system colour keywords have been around for 20 years - absolutely safe to use
+
+				the actual colour sets differ across browsers
+
+				the chances your clients and designers will like them are zero
+
+				so let's make our theme more sophisticated
+
+				but we will come back to system colours later
+			</aside>
+		</section>
+
+		<section>
+			<h1>Theme CSS</h1>
+
+			<pre class="language-css r-stretch"><code data-trim data-line-numbers="1-5|7-13|15-19|21-24|4,11,18">
+				html, html[data-theme="light"] {
+					--color-fore: black;
+					--color-back: white;
+					color-scheme: light;
+				}
+
+				@media (prefers-color-scheme: dark) {
+					html {
+						--color-fore: white;
+						--color-back: black;
+						color-scheme: dark;
+					}
+				}
+
+				html[data-theme="dark"] {
+					--color-fore: white;
+					--color-back: black;
+					color-scheme: dark;
+				}
+
+				body {
+					color: var(--color-fore);
+					background-color: var(--color-back);
+				}
+			</code></pre>
+
+			<aside class="notes" data-markdown>
+				you have possibly used a pattern like this on your own themed sites
+
+				we start with custom properties set to a default light theme
+
+				we'll also uses these colours if a data-theme attribute is set to "light". Could be set server or client side using a cookie or whatever
+
+				[CLICK] we then check the OS preference - if it's dark, we use the dark theme colours
+
+				[CLICK] we also repeat that if the data-theme attribute is set to dark
+
+				[CLICK] the we apply the colours wherever we need them
+
+				[CLICK] note that I've also set the color-scheme property
+
+				ensures the browser uses reasonable colours for every tag if we don't explicitly set them
+			</aside>
+		</section>
+
+		<section>
+
+			<iframe data-src="assets/theme-basic2.html" width="1100" height="1000"></iframe>
+
+			<p class="status green">SAFE</p>
+
+			<aside class="notes" data-markdown>
+				this is the result
+
+				[DEMO]
+
+				this is pure black and white theme rather than the browser defaults
+
+				I've not styled form fields or buttons but they still look OK
+
+				because the color-scheme property to light or dark
+
+				a really old browser could ignore that
+
+				but then you'd just see white fields in a dark theme
+
+				it'd still be usable
+			</aside>
+		</section>
+
+		<section>
+			<h1>Theme CSS</h1>
+
+			<pre class="language-css"><code data-trim>
+				@media (prefers-color-scheme: dark) {
+					html {
+						--color-fore: white;
+						--color-back: black;
+						color-scheme: dark;
+					}
+				}
+
+				html[data-theme="dark"] {
+					--color-fore: white;
+					--color-back: black;
+					color-scheme: dark;
+				}
+			</code></pre>
+
+			<p>It's not DRY!</p>
+
+			<p><em>it's WET</em></p>
+
+			<aside class="notes" data-markdown>
+				let's go back to our code
+
+				the problem here is we have to define the dark theme twice
+
+				* once for the OS preference and
+				* and once for the user choice
+
+				we can't combine these selectors
+
+				you can use a mixin and a build tools, but the final code still has the same values in two places
+
+				it's not DRY - which stands for Don't Repeat Yourself
+
+				It's WET - or Write Everything Twice
+			</aside>
+		</section>
+
+		<section>
+
+			<h1>CSS Container Style Queries</h1>
+
+			<pre class="language-css" data-id="code-animation"><code data-trim>
+				html, html[data-theme="light"] {
+					--theme: light;
+				}
+
+				@media (prefers-color-scheme: dark) {
+					html {
+						--theme: dark;
+					}
+				}
+
+				html[data-theme="dark"] {
+					--theme: dark;
+				}
+			</code></pre>
+
+			<p class="status red">BEWARE</p>
+
+			<aside class="notes" data-markdown>
+				that's not ideal
+
+				rather than repeating ourselves, we could use Container Style Queries
+
+				another very new feature
+
+				we'll start with similar code except we just set a single custom property
+
+				named "theme" to either light or dark
+			</aside>
+		</section>
+
+
+		<section>
+			<h1>CSS Container Style Queries</h1>
+
+			<pre class="language-css" data-id="code-animation"><code data-trim data-line-numbers="1-5|7|7-13">
+				body {
+					color: black;
+					background-color: white;
+					color-scheme: light;
+				}
+
+				@container style(--theme: dark) {
+					body {
+						color: white;
+						background-color: black;
+						color-scheme: dark;
+					}
+				}
+			</code></pre>
+
+			<p class="status red">BEWARE</p>
+
+			<aside class="notes" data-markdown>
+				we can then define a default light theme
+
+				[CLICK] but use Container Style Query to examine the computed value the theme custom property
+
+				[CLICK] if it's set to dark, we use different colours
+
+				now our colours are defined only once for each theme. Great but:
+
+				* Chrome from March 2024
+				* Safari from September 2024
+				* no support in Firefox
+
+				even supported browsers can only check custom properties values
+
+				they can't check the values of any other properties yet such as a font size or a margin
+
+				so probably don't use this yet
+			</aside>
+		</section>
+
+		<section>
+			<h1><code>light-dark()</code> function</h1>
+
+			<pre class="language-css"><code data-trim>
+				html, html[data-theme="light"] {
+					color-scheme: light;
+				}
+
+				@media (prefers-color-scheme: dark) {
+					html {
+						color-scheme: dark;
+					}
+				}
+
+				html[data-theme="dark"] {
+					color-scheme: dark;
+				}
+			</code></pre>
+
+			<p class="status amber">CAUTION</p>
+
+			<aside class="notes" data-markdown>
+				fortunately, there's an even simpler option
+
+				it's still DRY and uses less code
+
+				we'll start as before
+
+				but this time we'll just set the color-scheme property
+			</aside>
+		</section>
+
+		<section>
+			<h1><code>light-dark()</code> function</h1>
+
+			<pre class="language-css"><code data-trim data-line-numbers="2-4">
+				body {
+					--color-fore1: light-dark(#003, #ccc);
+					--color-fore2: light-dark(#336, #ccf);
+					--color-back1: light-dark(#ccc, #003);
+
+					color: var(--color-fore1);
+					background-color: var(--color-back1);
+				}
+
+				h1 {
+					color: var(--color-fore2);
+				}
+			</code></pre>
+
+			<p class="status amber">CAUTION</p>
+
+			<aside class="notes" data-markdown>
+				then we use a new light-dark() function
+
+				it's passed two parameters:
+
+				* a light colour
+				* and a dark colour
+
+				you can use whatever colour values you like - hex, rgb, hsl
+
+				this code sets custom properties
+
+				but you can use the light-dark() function on any CSS property where you'd use a colour
+			</aside>
+		</section>
+
+		<section>
+			<iframe data-src="assets/theme-advanced2.html" width="1100" height="1020"></iframe>
+
+			<p class="status amber">CAUTION</p>
+
+			<aside class="notes" data-markdown>
+				this is it in action. I've only set a few colours here
+
+				[DEMO] works in all modern browsers released this year
+
+				use it with caution - older browsers will ignore light-dark() functions
+
+				they'll revert browser default colours - that might be good enough
+
+				---
+
+				a couple of themes is a bit boring. would you like 10? maybe 20?
+
+				or how about 50,000 themes - 25,000 in dark mode and 25,000 in light mode
+
+				and the user can tweak it using simple sliders
+
+				oh yeah and it's less code than the previous options
+
+				and it works in more browsers. anyone interested?
+			</aside>
+		</section>
+
+		<section>
+			<h1><code>color-mix()</code> function</h1>
+
+			<pre class="language-css"><code data-trim>
+				color: color-mix(
+					&lt;interpolation&gt;,
+					&lt;color1&gt; &lt;color1%&gt;,
+					&lt;color2&gt; &lt;color2%&gt;
+				);
+			</code></pre>
+
+			<p style="background-color: color-mix(in oklab, black 25%, white 75%);"><code style="color:#060;">background-color: color-mix(in oklab, black 25%, white 75%);</code></p>
+
+			<p style="background-color: color-mix(in oklab, black 50%, white 50%);"><code>background-color: color-mix(in oklab, black 50%, white 50%);</code></p>
+
+			<p style="background-color: color-mix(in oklab, black 75%, white 25%);"><code>background-color: color-mix(in oklab, black 75%, white 25%);</code></p>
+
+			<p class="status green">SAFE</p>
+
+			<aside class="notes" data-markdown>
+				to do that: first here's the color-mix function
+
+				it's been around since early 2023 and has good support
+
+				you define a colour space profile which is effectively a mixing method
+
+				I've used oklab here
+
+				then you specify two colours and the percentage of each you want
+
+				takes those two, mixes them a bucket, and spits out a new color
+
+				these examples just mix proportions of black and white to get shades of grey
+			</aside>
+		</section>
+
+		<section>
+			<h1>Theme <code>color-scheme</code></h1>
+
+			<pre class="language-css"><code data-trim>
+				html, html[data-theme="light"] {
+					color-scheme: light;
+				}
+
+				@media (prefers-color-scheme: dark) {
+					html {
+						color-scheme: dark;
+					}
+				}
+
+				html[data-theme="dark"] {
+					color-scheme: dark;
+				}
+			</code></pre>
+
+			<p class="status amber">CAUTION</p>
+
+			<aside class="notes" data-markdown>
+				going back to our theme styles, we'll set the color-scheme to light or dark as we've done before
+			</aside>
+		</section>
+
+		<section>
+			<h1>Theme base colour and mix</h1>
+
+			<pre class="language-css"><code data-trim data-line-numbers="|2,3|7|4,5|">
+				:root {
+					--base-hue: 180;
+					--base-color: hsl(var(--base-hue) 100% 50%);
+					--base-mix: 30%;
+					--system-mix: calc(100% - var(--base-mix));
+
+					accent-color: var(--base-color);
+				}
+			</code></pre>
+
+			<pre class="fragment language-css"><code data-trim>
+				body {
+					--color-canvastext: color-mix(
+							in oklab,
+							var(--base-color) var(--base-mix),
+							CanvasText var(--system-mix)
+					);
+				}
+			</code></pre>
+
+			<p class="status amber">CAUTION</p>
+
+			<aside class="notes" data-markdown>
+				next, we'll set some custom properties in the root element
+
+				[CLICK] the base hue is a value between 0 and 360 degrees on a colour wheel. 180 in middle
+
+				we then define the base colour using that hue, with some reasonable saturation and lightness values
+
+				[CLICK] I've also set accent-color to this base color
+
+				[CLICK] I'm then setting a base-mix value of 30%
+
+				the system-mix is 100% minus that, so it'll be 70%
+
+				[CLICK] [CLICK] you can then mix this base colour with something else - like a system colour we saw earlier
+
+				looks complex
+
+				all we're doing is mixing our base colour with the system CanvasText colour in a specific proportion
+
+				and the base hue and the mix percentage can be updated with JavaScript
+			</aside>
+		</section>
+
+		<section>
+
+			<iframe data-src="assets/theme-advanced3.html" width="1100" height="1020"></iframe>
+
+			<p class="status amber">CAUTION</p>
+
+			<aside class="notes" data-markdown>
+				[DEMO] result: we can set
+
+				* any of 360 hues
+				* what percentage of that hue is mixed with system colours - 0 to 70 - above that blends into one colour
+				* and 2 modes - either light or dark
+
+				we have just over 50,000 themes, and all should remain readable
+
+				whether your users and clients are happy with that level of customization is another matter!
+
+				color-mix has got good support
+
+				but old browsers will revert back to system colours
+			</aside>
+		</section>
+
+		<section>
+			<h1>Quick stuff: styling &lt;select&gt;</h1>
+
+			<pre class="language-html"><code data-trim>
+				&lt;select name=&quot;job&quot;&gt;
+					&lt;option&gt;digital prophet&lt;/option&gt;
+					&lt;option&gt;brand warrior&lt;/option&gt;
+					&lt;option&gt;inspiration Jedi&lt;/option&gt;
+				&lt;/select&gt;
+			</code></pre>
+
+			<pre class="fragment language-html"><code data-trim style="text-decoration:line-through rgba(255,255,255,0.3);">
+				&lt;selectmenu name=&quot;job&quot;&gt;
+					&lt;option&gt;digital prophet&lt;/option&gt;
+					&lt;option&gt;brand warrior&lt;/option&gt;
+					&lt;option&gt;inspiration Jedi&lt;/option&gt;
+				&lt;/selectmenu&gt;
+			</code></pre>
+
+			<p class="status red">BEWARE</p>
+
+			<aside class="notes" data-markdown>
+				to finish off, let's look at some really quick stuff
+
+				here's a select drop down with some actual ridiculous but real job titles
+
+				apologies if you are an inspiration jedi
+
+				selects are one of the toughest field to style
+
+				lots of developers revert to JavaScript components which replace them with DIVs that are easier to style
+
+				they're not always good and can have accessibility issues
+
+				[CLICK] there was a proposal about an alternative field named selectmenu
+
+				it effectively added style-able DIVs - but that's now been abandoned
+			</aside>
+		</section>
+
+		<section>
+			<h1>Quick stuff: styling &lt;select&gt;</h1>
+
+			<pre class="language-css"><code data-trim>
+				select, ::picker(select) {
+					appearance: base-select;
+				}
+			</code></pre>
+
+			<pre class="fragment language-html"><code data-trim>
+				&lt;hr /&gt;
+				&lt;option value=&quot;annoying&quot;&gt;
+					&lt;img src=&quot;useless.svg&quot; /&gt;
+					&lt;span&gt;inspiration Jedi&lt;/span&gt;
+				&lt;/option&gt;
+			</code></pre>
+
+			<p class="status red">BEWARE</p>
+
+			<aside class="notes" data-markdown>
+				current thinking is that it's best to keep select
+
+				but you can apply a style reset that'll give it super powers
+
+				[CLICK] you'll be able to add further elements inside the option tags
+
+				and style them as you like
+
+				but it'll revert to a normal select in older browsers when it's not supported
+
+				and no browser does support it - apart from Chrome Canary
+
+				it looks promising, but it's months away at best
+			</aside>
+		</section>
+
+		<section>
+			<h1>Quick stuff: CSS maths functions</h1>
+
+			<pre class="language-css"><code data-trim>
+				sin(), cos(),
+				acos(), asin(),
+				abs(),
+				tan(), atan(), atan2(),
+				log(), pow(), sqrt(), hypot(), exp(),
+				round(), mod(), rem()
+			</code></pre>
+
+			<p class="status amber">CAUTION</p>
+
+			<aside class="notes" data-markdown>
+				more quick stuff
+
+				CSS has increasingly become a real programming language
+
+				most of these mathematical functions are baseline 2023 features
+
+				and Safari and Firefox even supported some before Chrome
+			</aside>
+		</section>
+
+		<section>
+			<h1>Quick stuff: CSS <code>env</code>ironment</h1>
+
+			<pre class="language-css"><code data-trim>
+				env(safe-area-inset-top | bottom | left | right);
+				env(titlebar-area-x | y);
+				env(titlebar-area-width | height);
+				env(keyboard-inset-top | bottom | left | right);
+				env(keyboard-inset-width | height);
+			</code></pre>
+
+			<pre class="language-css"><code data-trim data-line-numbers="5">
+				footer {
+					position: fixed;
+					inset: 0;
+					inset-block-start: auto;
+					padding-block-end: env(safe-area-inset-bottom, 20px);
+				}
+			</code></pre>
+
+			<p class="status green">SAFE</p>
+
+			<aside class="notes" data-markdown>
+				there's also a CSS env() function
+
+				which gives you information about the device dimensions, titlebars, and on-screen keyboards
+
+				been around since 2020 - not well known
+
+				this quick example fixes a footer to the bottom of the page
+
+				most desktop browsers will use a bottom padding of 20 pixels
+
+				but a smart watch with a curved edge could add more to ensure the whole footer remains visible
+			</aside>
+		</section>
+
+		<section>
+			<h1>Quick stuff: <code>attr()</code> function</h1>
+
+			<pre class="language-html"><code data-trim>
+				&lt;div data-width=&quot;100&quot;&gt;&lt;/div&gt;
+
+				&lt;style&gt;
+					div {
+						width: attr(data-width px);
+					}
+				&lt;/style&gt;
+			</code></pre>
+
+			<p class="status red">BEWARE</p>
+
+			<aside class="notes" data-markdown>
+				until now, the attr() function could only set content values
+
+				generally used in ::before and ::after pseudo-elements
+
+				it's being extended so you can grab an HTML attribute and apply a unit
+
+				so it can be used in any property
+			</aside>
+		</section>
+
+		<section>
+			<h1>Quick stuff: CSS random functions</h1>
+
+			<pre class="language-css"><code data-trim>
+				width: random(100px, 30em);
+
+				font-family: random-item(Arial, Times, "Comic Sans");
+
+				background: first-valid( 100px, invalidColor, #fff );
+			</code></pre>
+
+			<p class="status red">BEWARE</p>
+
+			<aside class="notes" data-markdown>
+				a new random function can return a random value between two units
+
+				you can also use a random-item() function to get a random value from a list
+
+				and first-valid will return the first usable value
+
+				you'd probably use that with custom properties
+			</aside>
+		</section>
+
+		<section>
+			<h1>Quick stuff: CSS sibling functions</h1>
+
+			<pre class="language-css"><code data-trim>
+				sibling-count(); /* number of siblings */
+				sibling-index(); /* current sibling */
+			</code></pre>
+
+			<pre class="fragment language-css"><code data-trim>
+				menu li {
+					position: absolute;
+
+					inset-block-start:
+						calc(sin( sibling-index() / sibling-count() * pi * 2) * 200px);
+					inset-inline-start:
+						calc(cos( sibling-index() / sibling-count() * pi * 2) * 200px);
+				}
+			</code></pre>
+
+			<p class="status red">BEWARE</p>
+
+			<aside class="notes" data-markdown>
+				this is one of my favourites
+
+				sibling-count returns the number of children an element's parent has got
+
+				and sibling-index returns a sibling's index number
+
+				[CLICK] so I suspect you may be able to use calculations like this
+
+				which would create a circular menu
+
+				definitely don't copy this - it might be completely wrong!
+			</aside>
+		</section>
+
+		<section>
+			<h1 style="margin:0;">Thanks for coming!</h1>
+
+			<h2 style="margin:0 0 0.5em 0;"><em>stuff we don't have time for&hellip;</em></h2>
+
+			<div class="flex">
+
+				<ul>
+					<li>CSS anchor positioning</li>
+					<li>CSS resizable form <code>field-sizing: content</code></li>
+					<li>CSS <code>font-size-adjust</code></li>
+					<li>CSS <code>margin-trim</code></li>
+					<li>CSS <code>contrast-color</code></li>
+					<li>CSS <code>hanging-punctuation</code></li>
+					<li>CSS <code>@property</code> definitions</li>
+					<li>CSS relative colors</li>
+					<li>CSS masonry layout</li>
+					<li>CSS new viewport unit dimensions</li>
+					<li>simpler media query syntax:<br /><code>@media (500px < width < 800px)</code></li>
+				</ul>
+
+				<ul>
+					<li>Web Component declarative shadow DOM</li>
+					<li>plaintext-only <code>contenteditable</code></li>
+					<li>JavaScript scroll snap events</li>
+					<li>JavaScript import maps and JSON modules</li>
+					<li>JavaScript <code>scheduler.yield()</code></li>
+					<li>JavaScript <code>Promise.try</code></li>
+					<li>JavaScript <code>Math.sumPrecise()</code></li>
+					<li>JavaScript picture-in-picture API</li>
+					<li>PWA badging API</li>
+					<li>PWA file type handler registration</li>
+					<li>PWA window controls overlay</li>
+				</ul>
+
+			</div>
+
+			<h2><a href="https://craigbuckler.com/techexeter24/">craigbuckler.com/techexeter24</a></h2>
+
+			<p class="status amber">DEPENDS!</p>
+			<aside class="notes" data-markdown>
+				and here's a list of stuff we don't have time for
+
+				so much is happening. exciting - but it'll make your brain ache
+
+				thanks for coming
+
+				I hope you found it useful
+
+				can go into the office on Monday and start using new stuff
+
+				thanks to Kris and the team for organising everything
+
+				it's been a great day
+
+				do you have any questions?
+
+				or have you had enough?
+
+				I'll be around for drinks - catch me there
+			</aside>
+		</section>
+
+	</main>
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+	// see https://revealjs.com/config/
+	Reveal.initialize({
+
+		width: 1920,
+		height: 1080,
+		loop: false,
+
+		center: false,
+
+		preloadIframes: true,
+
+		hash: true,
+		hashOneBasedIndex: true,
+		respondToHashChanges: true,
+		fragments: true,
+		fragmentInURL: false,
+
+		slideNumber: true,
+		controls: false,
+		controlsTutorial: false,
+		progress: true,
+
+		overview: true,
+		touch: false,
+		help: false,
+		pause: false,
+		transition: 'concave',
+
+		showNotes: false,
+
+		plugins: [ RevealZoom, RevealMarkdown, RevealHighlight, RevealNotes ]
+	});
+	</script>
+</body>
+</html>

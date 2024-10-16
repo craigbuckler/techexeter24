@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>scroll driven animations</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/core-color.css">
+<style>
+body {
+  margin-block: 3em;
+}
+
+main {
+  max-width: 30em;
+  margin-inline: auto;
+}
+
+#progress {
+  position: fixed;
+  inset: -1px;
+  height: 1em;
+  padding: 0;
+  margin: 0;
+  background-color: #c00;
+  transform-origin: 0;
+  animation: auto linear scaleX both;
+  animation-timeline: scroll();
+}
+
+@keyframes scaleX {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin-block: 1.5em;
+  animation: auto linear reveal both;
+  animation-timeline: view();
+  animation-range: entry 5% cover 50%;
+}
+
+@keyframes reveal {
+  0% { opacity: 0; clip-path: inset(0% 50% 0% 50%); }
+  100% { opacity: 1; clip-path: inset(0% 0% 0% 0%); }
+}
+</style>
+</head>
+<body>
+
+  <main>
+
+    <h1>Example heading</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam molestie nec augue nec sollicitudin. Mauris pulvinar nunc id leo consequat, quis elementum enim imperdiet. Mauris vel metus felis. Nunc rhoncus lobortis leo, at interdum turpis. Curabitur in diam quis lectus cursus pharetra eget in ex. Sed condimentum metus id nisi luctus venenatis. Curabitur quis eleifend eros, sed pretium urna.</p>
+
+    <p>Nulla facilisis neque sapien, id malesuada erat efficitur in. Cras ultricies sit amet purus ac mollis. Ut non euismod ligula. Integer et nisi a lorem egestas iaculis vel ac risus. Sed finibus massa et neque pellentesque, in consequat lacus blandit. Suspendisse viverra condimentum consectetur. Donec blandit neque pellentesque placerat vulputate. Phasellus non turpis fringilla dolor dignissim eleifend. Vivamus hendrerit lacus a ex lacinia iaculis eu nec turpis. Aliquam nisl enim, ornare tristique volutpat in, finibus sit amet est. Vivamus volutpat porttitor eros et imperdiet. Mauris cursus imperdiet elit, in hendrerit nisi mattis cursus.</p>
+
+    <p>Etiam gravida, lorem nec tincidunt porttitor, enim sem pretium diam, non blandit odio libero nec justo. Pellentesque dapibus nibh quis pellentesque feugiat. Fusce vitae vehicula erat, quis suscipit arcu. Nullam vitae nisl ex. Maecenas et eros vitae sapien gravida blandit sed a orci. Donec malesuada urna sem, id vestibulum nulla fermentum semper. Nam gravida nisi in facilisis efficitur. Phasellus et tellus vitae lectus fermentum vestibulum. Donec libero sem, malesuada ut pharetra in, tincidunt id erat. Curabitur sit amet vehicula tortor. Curabitur eu molestie odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse non risus id magna elementum convallis a sit amet libero. Nullam pellentesque arcu in finibus imperdiet. Mauris aliquet vel augue vel blandit.</p>
+
+    <img src="images/puffin.jpg" width="900" height="601" alt="puffin" />
+
+    <h2>Example sub-heading</h2>
+
+    <p>Fusce quis dignissim mi, sit amet pulvinar dolor. In hac habitasse platea dictumst. Proin ac nunc et turpis scelerisque viverra vel id nibh. Praesent vel scelerisque quam. Mauris blandit metus tellus, at eleifend arcu egestas ac. Suspendisse ullamcorper nunc non suscipit volutpat. Morbi ultrices massa ligula, at finibus nisi convallis non. Etiam vestibulum tincidunt vehicula. Nullam sagittis orci sed lectus finibus, id rhoncus massa varius. Nunc finibus sit amet ligula aliquet fermentum. Nunc molestie orci sed tincidunt lacinia. Nunc lobortis vulputate augue in dignissim. Nullam condimentum eros metus, at vestibulum purus hendrerit eget. Mauris libero ex, congue non ornare ut, aliquet eget dolor. Duis laoreet bibendum nisi, eu accumsan tortor luctus vel.</p>
+
+    <p>Fusce mollis fermentum arcu, eget mattis urna mattis non. Maecenas et mauris orci. Suspendisse fermentum dui a velit pulvinar, in commodo massa laoreet. Donec nec tristique neque, porttitor ultricies nisi. Fusce tincidunt accumsan ligula, sed vehicula enim posuere at. Duis cursus quis metus quis vestibulum. Quisque sed risus aliquam, ultrices tortor vel, viverra lorem. Morbi posuere, lorem eu vulputate varius, velit nunc ultrices justo, ultrices ultrices mi nunc faucibus neque. Sed sed convallis nulla. Suspendisse vehicula tellus in ante convallis, tempor gravida purus auctor. Sed at tempor nisi. Nulla in quam ac dolor lobortis luctus. Nullam at risus pellentesque, malesuada magna eu, vehicula urna.</p>
+
+    <img src="images/squirrel.jpg" width="900" height="600" alt="squirrel" />
+
+    <h2>Another sub-heading</h2>
+
+    <p>Praesent est risus, maximus a lacinia et, mattis id justo. Quisque eu pulvinar urna. Sed magna enim, maximus sit amet libero vel, ullamcorper eleifend felis. Nullam vitae pellentesque velit, quis viverra diam. Nunc sit amet imperdiet dolor. Quisque purus orci, ullamcorper vitae suscipit eu, varius quis massa. Cras semper magna sed cursus porttitor. Vivamus pharetra placerat leo ac ornare. In vulputate tortor non mauris pretium dapibus. Integer aliquet pellentesque leo, id egestas diam hendrerit vitae.</p>
+
+    <p>Vivamus bibendum malesuada lacus vestibulum venenatis. Sed viverra nisl hendrerit, fermentum elit ac, placerat purus. Duis eros justo, condimentum sed pharetra quis, congue sit amet nisl. Curabitur non pellentesque orci, eget porta dolor. In ac cursus odio, vel iaculis mauris. Aenean gravida porttitor faucibus. Integer risus odio, sodales nec erat quis, varius rhoncus metus.</p>
+
+    <p>In ultrices nibh ac vehicula tempus. Donec consectetur lacus vel turpis faucibus tempor. Suspendisse leo erat, scelerisque ac tincidunt eget, finibus id metus. Duis enim massa, gravida ut mattis viverra, interdum nec elit. Nulla sagittis vehicula ante, nec tempor enim bibendum a. Aenean velit lorem, laoreet id scelerisque et, ultricies sit amet felis. Quisque aliquam est quis pulvinar sodales. Curabitur efficitur posuere urna, id ultrices lacus pharetra at. Aenean nec magna dolor. Ut a mi in quam maximus egestas. Morbi quam risus, lacinia ut sagittis vel, lacinia quis risus. Etiam lobortis lectus non massa lacinia, quis fringilla ante fermentum. Cras a faucibus libero. Duis bibendum egestas ipsum ac dictum.</p>
+
+  </main>
+
+  <div id="progress"></div>
+
+</body>
+</html>

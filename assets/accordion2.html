@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>accordion</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/core-color.css">
+<style>
+body {
+  margin: 1em;
+}
+
+p {
+  margin-block-end: 0.5em;
+}
+
+details {
+  user-select: none;
+}
+
+summary {
+  background-color: #333;
+  padding-inline: 0.2em;
+  margin-block: 0.2em;
+  cursor: pointer;
+}
+
+details p {
+  margin-inline-start: 1.2em;
+}
+</style>
+<script type="module">
+</script>
+</head>
+<body>
+
+  <main>
+
+    <details name="faq">
+      <summary>What is HTML?</summary>
+
+      <p>Hypertext Markup Language</p>
+      <p>Used for web page content.</p>
+    </details>
+
+    <details name="faq">
+      <summary>What is CSS?</summary>
+
+      <p>Cascading Style Sheets</p>
+      <p>Used to style web page content.</p>
+    </details>
+
+    <details name="faq">
+      <summary>What is JS?</summary>
+
+      <p>JavaScript / ECMAScript</p>
+      <p>Used to add interactivity to web pages.</p>
+    </details>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>scroll driven animations</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/core-color.css">
+<style>
+body {
+  margin-block: 3em;
+}
+
+main {
+  max-width: 30em;
+  margin-inline: auto;
+}
+
+#progress {
+  position: fixed;
+  inset: -1px;
+  height: 1em;
+  padding: 0;
+  margin: 0;
+  background-color: #c00;
+  transform-origin: 0;
+  animation: auto linear scaleX both;
+}
+
+@keyframes scaleX {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin-block: 1.5em;
+  animation: auto linear reveal both;
+}
+
+@keyframes reveal {
+  0% { opacity: 0; clip-path: inset(0% 50% 0% 50%); }
+  100% { opacity: 1; clip-path: inset(0% 0% 0% 0%); }
+}
+</style>
+</head>
+<body>
+
+  <main>
+
+    <h1>Example heading</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+    <img src="images/puffin.jpg" width="900" height="601" alt="puffin" />
+
+    <h2>Example sub-heading</h2>
+
+    <p>Fusce quis dignissim mi, sit amet pulvinar dolor.</p>
+
+    <img src="images/squirrel.jpg" width="900" height="600" alt="squirrel" />
+
+    <h2>Another sub-heading</h2>
+
+    <p>Praesent est risus, maximus a lacinia et, mattis id justo.</p>
+
+  </main>
+
+  <div id="progress"></div>
+
+</body>
+</html>

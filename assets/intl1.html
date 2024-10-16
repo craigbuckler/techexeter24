@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Logical properties</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/core-color.css">
+<link rel="stylesheet" href="css/intl.css">
+<body>
+
+  <header>
+
+    <h1>LOGO</h1>
+
+    <menu>
+      <li><a href="#">home</a></li>
+      <li><a href="#">about</a></li>
+      <li><a href="#">contact</a></li>
+    </menu>
+
+  </header>
+
+  <main>
+    <p>Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content.&lrm;</p>
+
+    <h2>Intl API</h2>
+
+    <p><a href="https://youtu.be/1r7Uh2mYh_Q">youtu.be/1r7Uh2mYh_Q</a></p>
+
+    <h2>Toggle writing mode</h2>
+    <pre id="toggle"></pre>
+
+  </main>
+
+<script type="module">
+const
+  html = document.documentElement,
+  toggle = document.getElementById('toggle'),
+  mode = [
+    { dir: 'ltr', mode: 'horizontal-tb' },
+    { dir: 'rtl', mode: 'horizontal-tb' },
+    { dir: 'ltr', mode: 'vertical-lr' },
+    { dir: 'ltr', mode: 'vertical-rl' },
+  ];
+
+let curMode = -1;
+switchMode();
+toggle.addEventListener('click', switchMode);
+
+function switchMode() {
+
+  curMode = ++curMode % mode.length;
+
+  const m = mode[curMode];
+  toggle.textContent = `\u200E<html lang="en" dir="${ m.dir }">\u200E\n\u200Ehtml { writing-mode: '${ m.mode }'; }\u200E`;
+
+  html.setAttribute('dir', m.dir);
+  html.style.writingMode = m.mode;
+
+}
+</script>
+</body>
+</html>

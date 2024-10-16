@@ -1,0 +1,25 @@
+:root {
+
+  --color-back0: #191919;
+  --color-back1: oklch(from var(--color-back0) calc(l + 0.1) c h);
+
+  --color-fore0: #fff;
+
+}
+
+body {
+  color: var(--color-fore0);
+  background-color: var(--color-back0);
+}
+
+table, button, input, textarea, select {
+  color: inherit;
+  background-color: inherit;
+  border-color: currentColor;
+  border-width: 0.5vw;
+}
+
+button, input, textarea, select {
+  color: var(--color-fore0);
+  background-color: var(--color-back1);
+}

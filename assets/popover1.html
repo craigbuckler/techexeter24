@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>popover</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/core-color.css">
+<style>
+body {
+  margin: 1em;
+}
+
+main {
+  max-width: 30em;
+  margin-inline: auto;
+}
+
+[popover] {
+  h2 {
+    margin-block: 0;
+  }
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+  }
+}
+
+[data-popovertarget] {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  user-select: none;
+}
+
+/*
+// show popover elements if none are active
+body:not(:has(:popover-open)) [popover] {
+  all: unset;
+  position: relative;
+  display: block;
+  max-width: 30em;
+  margin-inline: auto;
+
+  h2 {
+    margin-block-start: 1em;
+  }
+}
+*/
+</style>
+<script type="module">
+document.addEventListener('click', e => {
+  const
+    t = e?.target?.dataset?.popovertarget,
+    popover = t && document.getElementById(t);
+
+  popover && popover.showPopover();
+}, false);
+</script>
+</head>
+<body>
+
+  <main>
+
+    <h1>Future web</h1>
+
+    <p>Lots of new features in&hellip;</p>
+
+    <button popovertarget="tooltip-html">HTML</button>
+    <button popovertarget="tooltip-css">CSS</button>
+    <button popovertarget="tooltip-js">JS</button>
+
+    <p>Also activate <span data-popovertarget="tooltip-html">HTML</span>, <span data-popovertarget="tooltip-css">CSS</span>, and <span data-popovertarget="tooltip-js">JS</span> popovers with a little code.</p>
+
+  </main>
+
+  <aside popover id="tooltip-html">
+    <h2>Hypertext Markup Language</h2>
+    <p>Used for web page content.</p>
+    <p>Please try to learn it before jumping into React!</p>
+  </aside>
+
+  <aside popover id="tooltip-css">
+    <h2>Cascading Style Sheets</h2>
+    <p>Used to style web page content.</p>
+    <p>The cascade is your friend - Tailwind ain't!</p>
+  </aside>
+
+  <aside popover id="tooltip-js">
+    <h2>JavaScript / ECMAScript</h2>
+    <p>Used to add interactivity to web pages.</p>
+    <p>It's not Java and it's beyond scripting.</p>
+  </aside>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+body {
+  padding: 0;
+  margin: 0;
+  user-select: none;
+}
+
+header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding-block: 0.5em;
+  padding-inline: 2em;
+  background-color: #555;
+}
+
+menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+  list-style-type: none;
+}
+
+p, pre {
+  display: block;
+  margin-block-start: 1em;
+  user-select: none;
+}
+
+pre {
+  padding: 0.2em;
+  background-color: #242;
+}
+
+main {
+  max-width: 30em;
+  margin-inline: auto;
+}
+
+a:link, a:visited {
+  color: #f99;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  color: #fcc;
+  text-decoration: underline;
+}

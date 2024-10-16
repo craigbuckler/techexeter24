@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>align-content</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/core-color.css">
+<style>
+label {
+  display: block;
+  text-align: center;
+  margin: 2vh auto;
+}
+
+p {
+  margin: 0;
+}
+
+#align {
+  outline: 0 none;
+  border: 0 none;
+}
+
+.container {
+  width: 80vw;
+  height: calc(80vh - 6vh);
+  margin: 0 auto;
+  border: solid 0.5vw #f00;
+}
+
+.child {
+  padding: 0.5em 1em;
+}
+
+.child:nth-child(1) { background-color: #440; }
+.child:nth-child(2) { background-color: #044; }
+.child:nth-child(3) { background-color: #404; }
+</style>
+</head>
+<body>
+
+<label>
+  .container { align-content:
+  <select id="align">
+    <option>center</option>
+    <option>normal</option>
+    <option>start</option>
+    <option>end</option>
+    <option>flex-start</option>
+    <option>flex-end</option>
+    <option>baseline</option>
+    <option>first baseline</option>
+    <option>last baseline</option>
+    <option>space-between</option>
+    <option>space-around</option>
+    <option>space-evenly</option>
+    <option>stretch</option>
+    <option>safe</option>
+    <option>unsafe</option>
+  </select>
+  ; }
+</label>
+
+<div class="container">
+
+  <p class="child">aligned child content block</p>
+  <p class="child">aligned child content block</p>
+  <p class="child">aligned child content block</p>
+
+</div>
+
+<script type="module">
+const
+  opt = document.getElementById('align'),
+  cont = document.getElementsByClassName('container')[0];
+
+opt.addEventListener('change', alignChange);
+alignChange();
+
+function alignChange() {
+  cont.style.alignContent = opt.value;
+}
+</script>
+</body>
+</html>

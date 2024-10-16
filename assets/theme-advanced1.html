@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>advanced theming</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="css/core.css">
+<style>
+html, html[data-theme="light"] {
+  --theme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --theme: dark;
+  }
+}
+
+html[data-theme="dark"] {
+  --theme: dark;
+}
+
+body {
+  color: black;
+  background-color: white;
+  color-scheme: light;
+}
+
+/* not in Firefox */
+@container style(--theme: dark) {
+  body {
+    color: white;
+    background-color: black;
+    color-scheme: dark;
+  }
+}
+
+#theme {
+  float: right;
+}
+</style>
+<script>
+// get OS theme preference
+function osThemePreference() {
+  return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+}
+
+// set theme
+function applyTheme(override) {
+  const html = document.documentElement;
+  if (override === '') html.removeAttribute('data-theme');
+  else html.dataset.theme = override || osThemePreference();
+}
+
+// set theme
+applyTheme('');
+
+// theme switcher
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById('theme').addEventListener('change', e => applyTheme(e.target.value));
+});
+
+</script>
+</head>
+<body>
+
+<main>
+
+  <select id="theme">
+    <option value="">OS preference</option>
+    <option value="light">light</option>
+    <option value="dark">dark</option>
+  </select>
+
+  <h1>Themed site</h1>
+
+  <p>Some content. Some content. Some content. Some content. <a href="#">A link to something</a>.</p>
+
+  <form method="get">
+
+    <fieldset>
+      <legend>example form</legend>
+
+      <div class="formgrid">
+
+        <label for="textbox">input</label>
+        <input id="textbox" type="text" placeholder="an input" />
+
+        <label for="textarea" class="start">textarea</label>
+        <textarea id="textarea" rows="2" cols="30">a textarea</textarea>
+
+        <label for="select">select</label>
+        <select id="select">
+          <option>option one</option>
+          <option>option two</option>
+          <option>option three</option>
+        </select>
+
+        <input type="checkbox" id="checkbox" checked />
+        <label for="checkbox">checkbox</label>
+
+        <input type="radio" name="radio" id="radio1" checked />
+        <label for="radio1">radio one</label>
+
+        <input type="radio" name="radio" id="radio2" />
+        <label for="radio2">radio two</label>
+
+        <button>submit</button>
+
+      </div>
+    </fieldset>
+
+  </form>
+
+</main>
+
+<script>
+
+</script>
+</body>
+</html>

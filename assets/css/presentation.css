@@ -1,0 +1,165 @@
+:root {
+
+  --r-heading-color: rgb(169, 203, 224);
+  --r-heading-text-transform: none;
+
+}
+
+label {
+  user-select: none;
+}
+
+.status {
+  position: fixed;
+  font-size: 1.5em;
+  font-weight: bold;
+  width: 10em;
+  top: 0.2em;
+  right: -3.8em;
+  text-align: center;
+  padding-block: 0.1em 0;
+  background-color: #060;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.status.amber {
+  background-color: #c60;
+}
+
+.status.red {
+  background-color: #c00;
+}
+
+section:not([hidden]) .status {
+  transition: opacity 0.5s linear 1s;
+  opacity: 1;
+}
+
+.reveal {
+
+  h1, h2, h3 {
+    font-weight: normal;
+  }
+
+  h1, p, li {
+    code {
+      color: #0f0;
+    }
+  }
+
+  h2, h3 {
+    margin-block-start: 1em;
+  }
+
+  pre {
+    width: fit-content;
+    font-size: 1em;
+    margin-block-end: 1em;
+  }
+
+  pre code {
+    padding-inline: 1em;
+    padding-block: 0.5em;
+    max-height: 16em;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0.5em auto;
+  }
+
+  .r-fit-text {
+    line-height: 1;
+  }
+
+}
+
+.reveal .welcome {
+  h1, p {
+    font-weight: bold;
+    color: #fff;
+    text-shadow: -1px -1px 2px #000, 0px 0px 2px #000, 6px 6px 10px #000, 4px 4px 8px #000, 3px 3px 6px #000, 2px 2px 4px #000, 1px 1px 2px #000;
+  }
+}
+
+.welcome .slide-background-content {
+  opacity: 30%;
+}
+
+.accentcolor {
+
+  accent-color: red;
+
+  label, input, progress {
+    font: inherit;
+    display: block;
+    margin: 10px auto;
+  }
+
+  input[type="checkbox"], input[type="radio"] {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+  }
+
+  input[type="range"] {
+    width: 200px;
+    height: 30px;
+  }
+
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.ball {
+  width: 100px;
+  height: 100px;
+  background-color: #d00;
+  clip-path: circle();
+  animation: 2s cubic-bezier(0.7, 1.9, 0.6, 0.4) 0s infinite normal bounce;
+}
+
+.ball.linear {
+  animation-timing-function: linear(0, 0.06, 0.25, 0.56, 1, 0.81, 0.75, 0.81, 1, 0.94, 1 91%, 0.98, 1);
+}
+
+.printswitch {
+  font-size: 0.8em;
+  text-align: right;
+  margin-top: 2em;
+
+  svg {
+    width: 1.2em;
+  }
+
+  * {
+    vertical-align: middle;
+  }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  20% { transform: translateY(0); }
+  80% { transform: translateY(500px); }
+  100% { transform: translateY(500px); }
+}
+
+@media print {
+  * {
+    color: #222 !important;
+    background-color: #fff !important;
+    color-scheme: light !important;
+    text-shadow: none !important;
+  }
+
+  .printswitch {
+    display: none !important;
+  }
+}

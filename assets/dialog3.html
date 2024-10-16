@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>dialog</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/core-color.css">
+<style>
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  margin: 1em;
+}
+
+main {
+  max-width: 30em;
+  margin-inline: auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin-block: 1.5em;
+}
+
+button {
+  display: block;
+  margin-block: 0.5em;
+  margin-inline: auto;
+}
+
+dialog {
+  p { margin: 0; }
+
+  transition: all 0.6s ease-out;
+  transition-behavior: allow-discrete;
+
+  &[open] {
+
+    /* animation when open attribute set */
+    opacity: 1;
+    transform: none;
+
+    /* style just before open attribute set */
+    @starting-style {
+      display: block;
+      opacity: 0;
+      transform: scale(0.8) translateY(-70vh) perspective(500px) rotateX(90deg);
+    }
+
+  }
+
+  &:not([open]) {
+    /* animation when closed */
+    display: none;
+    opacity: 0;
+    transform: scale(0.8) translateX(100vw) skewX(-30deg);
+  }
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+</style>
+<script type="module">
+document.getElementById('open-button').addEventListener('click', () =>
+  document.getElementById('dialog').showModal()
+);
+</script>
+</head>
+<body>
+
+  <main>
+
+    <h1>Heading</h1>
+
+    <button id="open-button">open dialog</button>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam molestie nec augue nec sollicitudin.</p>
+
+    <img src="images/squirrel.jpg" width="900" height="600" alt="squirrel" />
+
+    <h2>Sub-heading</h2>
+
+    <p>Fusce quis dignissim mi, sit amet pulvinar dolor. In hac habitasse platea dictumst. Proin ac nunc et turpis scelerisque viverra vel id nibh. Praesent vel scelerisque quam. Mauris blandit metus tellus, at eleifend arcu egestas ac.</p>
+
+    <img src="images/puffin.jpg" width="900" height="601" alt="puffin" />
+
+    <p>Fusce mollis fermentum arcu, eget mattis urna mattis non. Maecenas et mauris orci. Suspendisse fermentum dui a velit pulvinar, in commodo massa laoreet. Donec nec tristique neque, porttitor ultricies nisi.</p>
+
+  </main>
+
+  <dialog id="dialog">
+    <p>I'm an annoying modal popup dialog!</p>
+
+    <form method="dialog">
+      <button>Close</button>
+    </form>
+  </dialog>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>dialog</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/core-color.css">
+<style>
+body {
+  margin: 1em;
+}
+
+main {
+  max-width: 30em;
+  margin-inline: auto;
+}
+
+img {
+  width: 80%;
+  height: auto;
+  margin-block: 1.5em;
+  margin-inline: auto;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: 1.2s pagetransition-out 0s linear;
+}
+
+::view-transition-new(root) {
+  animation: 1.2s pagetransition-in 0s linear;
+}
+
+@keyframes pagetransition-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes pagetransition-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+</style>
+</head>
+<body>
+
+  <main>
+
+    <h1>Multi-page view transitions are great!</h1>
+
+    <p>Fusce quis dignissim mi, sit amet pulvinar dolor. In hac habitasse platea dictumst. Proin ac nunc. <a href="./view-transition1.html">Previous page&hellip;</a></p>
+
+    <img src="images/puffin.jpg" width="900" height="601" alt="puffin" />
+
+  </main>
+
+</body>
+</html>
