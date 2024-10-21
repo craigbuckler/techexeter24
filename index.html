@@ -879,7 +879,7 @@
 			<p class="fragment r-fit-text" style="color:#f33;">janky performance!</p>
 
 			<aside class="notes" data-markdown>
-				until now, we needed JavaScript to trigger scroll-based animations. libraries exist - has anyone written their own? This gets geeky!
+				until now, needed JavaScript to trigger scroll-based animations. libraries exist - anyone written their own? This gets geeky!
 
 				[CLICK] Intersection Observer API since 2016. Bit odd - but determines when an element moves in or out of the viewport
 
@@ -897,9 +897,10 @@
 
 				[CLICK] but still need calculations on the main thread. Can't use Web Workers - need DOM access
 
-				all calculations have to be restarted when a browser is resized or a phone's rotated
+				all calculations have to be redone when a browser is resized or a phone's rotated.
+				Chrome also has a breakdown when you combine it with scroll snap.
 
-				[CLICK] the result can be janky performance
+				[CLICK] the result is janky performance
 			</aside>
 		</section>
 
@@ -914,15 +915,15 @@
 
 				[SHOW]
 
-				there's no jankiness because it uses CSS scroll linked animations
+				this page is smooth because it uses CSS scroll linked animations
 
 				it's new, can seem complex, and things may change
 
-				but it doesn't require JavaScript
+				but you can use it today
 
-				and calculations occur off the main thread
+				it doesn't require JavaScript
 
-				you can use it today
+				and calculations are done by the browser off the main thread
 			</aside>
 		</section>
 
@@ -1053,13 +1054,13 @@
 			<aside class="notes" data-markdown>
 				want some more exciting animations?
 
-				view transitions have been around for a while in single page apps
+				view transitions have been around for a while in SINGLE PAGE APPS
 
-				allow you to pick parts of your page and animate from a start to an ending state
+				allow you to pick a part of your page and animate it from a start to an ending state
 
-				and you don't have to manage two sets of DOM elements
+				without having to manage two sets of DOM elements
 
-				it's now available to multi-page sites and apps
+				view transitions are now available to multi-page sites and apps
 
 				when you're navigating around the same domain
 
@@ -1130,9 +1131,13 @@
 			<aside class="notes" data-markdown>
 				everyone heard about HTML popovers?
 
+				[DEMO]
+
 				they're an ideal starting point for things like tooltips, notifications, error messages
 
-				they sit on top of everything else with a style-able backdrop
+				or even navigation menus if you use the new anchor positioning API - that needs its own separate talk
+
+				popovers sit on top of everything else with a style-able backdrop
 
 				and they can be opened and closed without any JavaScript
 			</aside>
@@ -1154,7 +1159,7 @@
 
 			<p class="status green">SAFE</p>
 			<aside class="notes" data-markdown>
-				any element can be given a popover attribute and an ID so it can be referenced
+				any element can be given a popover attribute and an ID so you can reference it
 
 				[CLICK] then any button can refer to that ID with a popovertarget attribute
 
@@ -1171,25 +1176,27 @@
 
 			<p class="status green">SAFE</p>
 			<aside class="notes" data-markdown>
-				the  HTML dialog element is similar
+				the HTML dialog element is similar. Requires a little JavaScript
 
-				but it's for modal dialogs and requires a little JavaScript
+				best used for modals where the user has to complete an action
 
 				[DEMO]
 
-				it's been around for a couple of years so it's safe to use
+				good things about popovers and dialogs:
 
-				good thing about popovers and dialogs:
-
-				* they're easy to style
+				* easy to style
 				* you can style the backdrop that covers the rest of the page
 				* they default to a fixed position in the centre of the viewport
 				* they respond to keyboard events like pressing escape
 				* and they sit in their own special top-layer container
 
-				which above everything else
+				it's above everything else
 
-				you can set your z-indexes to any value and they'll still work
+				you can set your z-index to Infinity and they'll still appear on top
+
+				been around for a couple of years - safe to use
+
+				polyfills are available for older browsers - but they can't emulate the top layer
 			</aside>
 		</section>
 
@@ -1583,15 +1590,17 @@
 
 			<p class="status amber">CAUTION</p>
 			<aside class="notes" data-markdown>
-				and interpolate-size not the only option
+				and interpolate-size isn't the only option
 
 				you can use the calc-size property instead
 
 				[DEMO] it does the same thing
 
-				[CLICK] main reason for using this is the size value - which is the element's real height
+				[CLICK] main reason for using calc-size:
 
-				can be used in calculations - add extra space or whatever
+				you can use the size value - which is the element's real height -
+
+				inside calculations. Add add extra space or whatever
 
 				again, only in Chrome 129
 
@@ -2019,7 +2028,7 @@
 
 				then you specify two colours and the percentage of each you want
 
-				takes those two, mixes them a bucket, and spits out a new color
+				takes those two, mixes them a virtual bucket, and spits out a new color
 
 				these examples just mix proportions of black and white to get shades of grey
 			</aside>
@@ -2390,23 +2399,25 @@
 			<aside class="notes" data-markdown>
 				and here's a list of stuff we don't have time for
 
-				so much is happening. exciting - but it'll make your brain ache
+				a lot's happening. exciting - but it'll make your brain ache
+
+				but you can go into work on Monday and start using lots of new stuff
 
 				thanks for coming
 
 				I hope you found it useful
 
-				can go into the office on Monday and start using new stuff
-
-				thanks to Kris and the team for organising everything
+				thanks to TechExeter for organising everything
 
 				it's been a great day
 
-				do you have any questions?
+				does anyone have any questions?
 
 				or have you had enough?
 
-				I'll be around for drinks - catch me there
+				---
+
+				I'll be around for drinks later if you want to chat about anything
 			</aside>
 		</section>
 
