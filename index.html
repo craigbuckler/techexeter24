@@ -228,11 +228,13 @@
 
 				there's little documentation
 
+				much of it has changed
+
 				so there's no code for AIs to copy
 
 				at best they'll say something's not possible
 
-				at worst they make some shit up
+				but they'll probably make some shit up
 			</aside>
 		</section>
 
@@ -1239,7 +1241,7 @@
 
 				[CLICK] and it has a click event handler
 
-				which runs the showModal method of the dialog element
+				which runs the dialog's showModal method
 			</aside>
 		</section>
 
@@ -1392,17 +1394,21 @@
 
 				magic part is the transition-behavior property - it allows discrete properties such as display
 
-				[CLICK] next we'll set the styles when the dialog is opened
+				[CLICK] next we'll set the styles when the dialog is fully opened
 
 				[CLICK] then we have a new at starting-style rule
 
-				which defines the styles at the very start of the animation
+				this defines the animation's starting styles
 
-				I've explicitly set display block but dialogs do that anyway
+				I've explicitly set display block
+
+				and that's applied at the very start because we've allowed discrete transitions
 
 				[CLICK] finally, we have the styles it'll animate to when fully closed
 
-				display none set. but discrete transitions ensure it only occurs at the very end of the animation
+				display none is set
+
+				that occurs at the very end of the animation because we've allowed discrete transitions
 			</aside>
 		</section>
 
@@ -1413,7 +1419,7 @@
 
 			<p class="status green">SAFE</p>
 			<aside class="notes" data-markdown>
-				this is the result
+				here's the result
 
 				[DEMO]
 
@@ -2015,6 +2021,11 @@
 
 			<p style="background-color: color-mix(in oklab, black 75%, white 25%);"><code>background-color: color-mix(in oklab, black 75%, white 25%);</code></p>
 
+			<div class="fragment">
+				<p>Mix any colour with a system colour:</p>
+				<p style="background-color: color-mix(in oklab, hsl(200 100% 50%) 50%, Canvas 50%);"><code style="color:#000;">background-color: color-mix(in oklab, <span style="background-color:hsl(200 100% 50%);">hsl(200 100% 50%)</span> 50%, <span style="background-color:Canvas;">Canvas</span> 50%);</code></p>
+			</div>
+
 			<p class="status green">SAFE</p>
 
 			<aside class="notes" data-markdown>
@@ -2022,15 +2033,17 @@
 
 				it's been around since early 2023 and has good support
 
-				you define a colour space profile which is effectively a mixing method
-
-				I've used oklab here
+				you define a colour space profile which is effectively a mixing method - I've used oklab here
 
 				then you specify two colours and the percentage of each you want
 
-				takes those two, mixes them a virtual bucket, and spits out a new color
+				the browser mixes them a virtual bucket and spits out a new color
 
 				these examples just mix proportions of black and white to get shades of grey
+
+				[CLICK] but you take any colour you like - say blue - and mix it with the system colours we saw earlier
+
+				that'd give your theme a tint that you can configure
 			</aside>
 		</section>
 
@@ -2076,10 +2089,10 @@
 
 			<pre class="fragment language-css"><code data-trim>
 				body {
-					--color-canvastext: color-mix(
+					--color-canvas: color-mix(
 							in oklab,
 							var(--base-color) var(--base-mix),
-							CanvasText var(--system-mix)
+							Canvas var(--system-mix)
 					);
 				}
 			</code></pre>
@@ -2095,17 +2108,17 @@
 
 				[CLICK] I've also set accent-color to this base color
 
-				[CLICK] I'm then setting a base-mix value of 30%
+				[CLICK] I'm then setting a base-mix of 30%
 
-				the system-mix is 100% minus that, so it'll be 70%
+				that's how much of this base colour we're going to use when mixing
 
-				[CLICK] [CLICK] you can then mix this base colour with something else - like a system colour we saw earlier
+				the system-mix is 100% minus that, so it's 70%
 
-				looks complex
+				[CLICK] [CLICK] let's now mix the base colour with a system colour such as the default background
 
-				all we're doing is mixing our base colour with the system CanvasText colour in a specific proportion
+				and we can do this for all the system colours
 
-				and the base hue and the mix percentage can be updated with JavaScript
+				but this base hue and the mix percentage can be updated in JavaScript
 			</aside>
 		</section>
 
@@ -2407,17 +2420,15 @@
 
 				I hope you found it useful
 
-				thanks to TechExeter for organising everything
-
-				it's been a great day
+				thanks to TechExeter for organising such a great day
 
 				does anyone have any questions?
-
-				or have you had enough?
 
 				---
 
 				I'll be around for drinks later if you want to chat about anything
+
+				or you want to hire me for your next project!
 			</aside>
 		</section>
 
