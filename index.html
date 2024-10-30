@@ -126,9 +126,9 @@
 
 				some prefer to use the term "contractor scum"
 
-				I've been doing web stuff since the mid 90s
+				I've been doing web stuff for a few decades
 
-				I've accumulated a lot of obscure knowledge
+				so I've accumulated a lot of obscure knowledge
 
 				you may have seen tutorials and books I've written for SitePoint and others
 
@@ -253,9 +253,7 @@
 			<aside class="notes" data-markdown>
 				I'm demonstrating browser fundamentals. you don't need a particular framework or tool
 
-				at least half of these features can be used today
-
-				most will allow you to drop libraries or at least reduce your CSS and JavaScript code
+				at least half of these features can be used today - most allow you to drop libraries or reduce your CSS and JavaScript code
 
 				*big question is: when should you start using a new feature?*
 
@@ -270,9 +268,8 @@
 
 				[CLICK] really - it depends - *you'll hear me say this a lot*
 
-				some features have little support - but you can safely use them without any problems
-
-				other features are widely adopted - but they're more risky when they're not available
+				* some features have little support - but you can safely use them without any problems
+				* other features are widely adopted - but they're more risky when they're not available
 			</aside>
 		</section>
 
@@ -492,9 +489,7 @@
 
 				[CLICK] no need to do that any longer!
 
-				align-content works in any block
-
-				you can set it to start, center, or end
+				align-content works in any block - you can set it to start, center, or end
 
 				[DEMO] you can set flex values which is a bit weird
 			</aside>
@@ -643,11 +638,9 @@
 
 				one of your colleagues could return from a weekend in Penzance and say: ahhh
 
-				it's all kicking off down there. If we don't translate our site to Cornish, they'll demand independence or some such nonsense
+				it's all kicking off down there. If we don't translate our site to Cornish, they'll demand independence or some nonsense
 
-				but if you use logical properties with grid and flexbox
-
-				your layout can be localized by changing just two values
+				but if you use logical properties with grid and flexbox - your layout can be localized by changing just two values
 			</aside>
 		</section>
 
@@ -887,7 +880,7 @@
 			<p class="fragment r-fit-text" style="color:#f33;">janky performance!</p>
 
 			<aside class="notes" data-markdown>
-				until now, needed JavaScript to trigger scroll-based animations. libraries exist - anyone written their own? This gets geeky!
+				until now, we needed JavaScript to trigger scroll-based animations. libraries exist - anyone written their own? This gets geeky!
 
 				[CLICK] Intersection Observer API since 2016. Bit odd - but determines when an element moves in or out of the viewport
 
@@ -895,18 +888,18 @@
 
 				[CLICK] still need window scroll event handlers
 
-				[CLICK] then need to calculate the size of the viewport and how far you've scrolled
+				[CLICK] then calculate the size of the viewport and how far you've scrolled
 
-				[CLICK] then need to calculate an element's dimensions and where it sits in the viewport
+				[CLICK] then calculate every element's dimensions and where it sits in the viewport
 
-				[CLICK] all cause a browser reflow. not changing anything - browser needs to recalculate the position of every element. expensive
+				[CLICK] all cause a browser reflow. not changing anything - browser must recalculate the position of every element. expensive
 
 				[CLICK] can use Intersection Observer boundingClientRect property - calculates element dimensions off main thread
 
 				[CLICK] but still need calculations on the main thread. Can't use Web Workers - need DOM access
 
-				all calculations have to be redone when a browser is resized or a phone's rotated.
-				Chrome also has a breakdown when you combine it with scroll snap.
+				* all calculations have to be redone when a browser is resized or a phone's rotated
+				* Chrome also has a breakdown when you combine this stuff with scroll snap
 
 				[CLICK] the result is janky performance
 			</aside>
@@ -969,15 +962,13 @@
 
 				[CLICK] that just scales the width from 0 to 100%
 
-				[CLICK] here's where the magic happens
-
-				we set a new animation-timeline property to a scroll() function
+				[CLICK] here's where the magic happens - set a new animation-timeline property to a scroll() function
 
 				that links the animation keyframes to how far the page has been scrolled from 0 to 100 percent
 
 				the default is vertical viewport scrolling
 
-				but you can use it on any scrollable container in any direction
+				can use it on any scrollable container in any direction
 
 				that's all you need for the progress bar
 			</aside>
@@ -1124,9 +1115,11 @@
 
 				fewer than 20 lines of CSS. In the past you'd have required
 
-				* JavaScript
-				* an Ajax loading
-				* and some heavy DOM shenanigans
+				* a load of JavaScript
+				* to load a page using Ajax
+				* followed by some heavy DOM shenanigans
+
+				not only that, but the browser can automatically disable View Transitions if the network's slow or the battery is running low
 			</aside>
 		</section>
 
@@ -1200,9 +1193,7 @@
 				* they're accessible and respond to keyboard events like pressing escape
 				* and they sit in their own special top-layer container
 
-				that's above everything else
-
-				you can set your z-index to Infinity and they'll still appear on top
+				that's above everything else - you can set your z-index to Infinity and they'll still appear on top
 
 				been around for a couple of years - safe to use
 
@@ -1408,15 +1399,11 @@
 
 				this defines the animation's starting styles
 
-				I've explicitly set display block
-
-				and that's applied at the very start because we've allowed discrete transitions
+				I've explicitly set display block - but discrete transitions applies that at the start of the animation
 
 				[CLICK] finally, we have the styles it'll animate to when fully closed
 
-				display none is set
-
-				that occurs at the very end of the animation because we've allowed discrete transitions
+				here, display none is set - but discrete transitions applies that at the end of the animation
 			</aside>
 		</section>
 
@@ -1465,9 +1452,7 @@
 
 				[DEMO] ideal for FAQs, expandable comments, ...
 
-				you define a details block
-
-				with a summary that contains the header
+				you define a details block - with a summary that contains the header
 
 				when that header is clicked, an open attribute is added to the details tag
 
@@ -1477,9 +1462,7 @@
 
 				styling is straight forward
 
-				but each details block opens independently
-
-				opening one won't close the others
+				but each details block opens independently - opening one won't close the others
 			</aside>
 		</section>
 
@@ -1756,7 +1739,9 @@
 			<aside class="notes" data-markdown>
 				you have possibly used a pattern like this on your own themed sites
 
-				we start with custom properties set to a default light theme
+				there are other ways to do it, but this has some practicalities and works in a lot of browsers
+
+				we start with custom properties to set a default light theme
 
 				we'll also uses these colours if a data-theme attribute is set to "light". Could be set server or client side using a cookie or whatever
 
@@ -2143,7 +2128,9 @@
 				* what percentage of that hue is mixed with system colours - 0 to 70 - above that blends into one colour
 				* and 2 modes - either light or dark
 
-				we have just over 50,000 themes, and all should remain readable
+				that gives us just over 50,000 themes, and all should remain readable
+
+				and you could add thousands more if you allow the user to configure saturation and lightness
 
 				whether your users and clients are happy with that level of customization is another matter!
 
@@ -2285,9 +2272,11 @@
 
 				this quick example fixes a footer to the bottom of the page
 
-				most desktop browsers will use a bottom padding of 20 pixels
+				a rectangular desktop browser will use a bottom padding of 20 pixels
 
-				but a smart watch with a curved edge could add more to ensure the whole footer remains visible
+				but a smart watch with a curved edge could add more padding so the whole footer remains visible
+
+				you might be able to use this in conjunction with the new viewport and container units
 			</aside>
 		</section>
 
